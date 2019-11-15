@@ -8,6 +8,8 @@ import Navigator from "./navigation/Navigator";
 import i18n from "i18n-js";
 import * as Localization from 'expo-localization';
 import strings from "./languages/";
+import registerForPushNotificationsAsync from "./components/util/PushNotifications"
+
 
 i18n.fallbacks = true;
 i18n.translations = strings;
@@ -28,6 +30,10 @@ export default class RootComponent extends Component<any, State> {
 
   componentWillMount() {
     this.loadFonts();
+  }
+
+  componentDidMount(){
+    registerForPushNotificationsAsync()
   }
 
   async loadFonts() {

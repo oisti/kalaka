@@ -12,6 +12,7 @@ interface PropsConnectedState {
 }
 interface PropsConnectedDispatcher {
   handlePressIncrement: () => void;
+  
   handlePressDecrement: () => void;
 }
 

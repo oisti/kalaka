@@ -1,14 +1,13 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import { ClickerScreen, ResultScreen, RankingScreen, Map } from "screens";
+import { ClickerScreen, ResultScreen, RankingScreen, EventsScreen, Map } from "screens";
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { Text, Button } from "native-base";
+import { Text } from "native-base";
 import React from "react";
-
 
 // https://github.com/janhesters/ReactNative-ComplexNavigation/blob/master/app/navigation/Navigator.tsx
 const RootStack = createStackNavigator(
-	{ ClickerScreen, ResultScreen, RankingScreen },
+	{ ClickerScreen, ResultScreen, RankingScreen, EventsScreen },
 	{
 		initialRouteName: "ClickerScreen",
 		headerMode: "none"

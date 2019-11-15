@@ -66,15 +66,25 @@ class EventsScreen extends React.Component<Props> {
                                                 {"Vestibulum euismod eros a lectus malesuada dignissim. Fusce ac dui arcu. Proin sodales tristique vestibulum. Ut nec dui id tortor mollis dapibus. Ut eget hendrerit orci. Sed in porta metus. Donec ut elit at ante porta facilisis."}
                                             </Text>
                                         </Row>
-                                        <Row>
+                                        <Row style={{ padding: 4, paddingTop: 0 }}>
                                             <Col alignItems="center" justifyContent="center">
                                                 <TouchableOpacity>
-                                                    <Ionicons name="ios-star-outline" size={20} color="grey" style={{ padding: 4, paddingTop: 0 }} />
+                                                    <Row alignItems="center" justifyContent="center">  
+                                                    <Ionicons name="ios-star-outline" size={20} color="grey" />
+                                                    <Text style={{fontSize: 12, color: "grey", marginLeft: 4}}>
+                                                        {"Érdekel"}
+                                                    </Text>
+                                                    </Row>
                                                 </TouchableOpacity>
                                             </Col>
                                             <Col alignItems="center" justifyContent="center">
                                                 <TouchableOpacity>
-                                                    <MaterialCommunityIcons name="share-outline" size={20} color="grey" style={{ padding: 4, paddingTop: 0 }} />
+                                                <Row alignItems="center" justifyContent="center">  
+                                                    <MaterialCommunityIcons name="share-outline" size={20} color="grey" />
+                                                    <Text style={{fontSize: 12, color: "grey", marginLeft: 4}}>
+                                                        {"Megosztás"}
+                                                    </Text>
+                                                </Row>
                                                 </TouchableOpacity>
                                             </Col>
                                         </Row>

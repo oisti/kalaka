@@ -50,7 +50,7 @@ class RankingScreen extends React.Component<Props> {
                   <Col>
                     <TouchableOpacity>
                       <Row>
-                        <Col size={2}>
+                        <Col size={3}>
                           <Row>
                             <Col alignItems="center" justifyContent="center">
                               <Row style={{ padding: 4 }} alignItems="center" justifyContent="center">
@@ -70,20 +70,20 @@ class RankingScreen extends React.Component<Props> {
                             <Col style={{flexDirection: "row", paddingTop: 8}}>
                               <MaterialCommunityIcons name="heart-pulse" size={25} color="#98002E"/>
                               <Text style={{ padding: 4, color: "grey" }}>
-                                {100}
+                                {index+1}
                               </Text>
                             </Col>
                           </Row>
                           <Row>
                             <Col>
-                              <Text>
+                              <Text style={{fontSize: 12}}>
                                 {"Segített: " + (index * 3)}
                               </Text>
                             </Col>
                           </Row>
                           <Row>
                             <Col>
-                              <Text>
+                              <Text style={{fontSize: 12}}>
                                 {"Isten fizesse: " + (index * 2)}
                               </Text>
                             </Col>

@@ -9,7 +9,8 @@ import i18n from "i18n-js";
 import * as Localization from 'expo-localization';
 import strings from "./languages/";
 import registerForPushNotificationsAsync from "./components/util/PushNotifications"
-
+import {FirebaseKeys} from './constants/ApiKeys';
+import * as firebase from 'firebase';
 
 i18n.fallbacks = true;
 i18n.translations = strings;
@@ -26,6 +27,10 @@ export default class RootComponent extends Component<any, State> {
     this.state = {
       isReady: false
     };
+
+    if (!firebase.apps.length){
+			firebase.initializeApp(FirebaseKeys)		
+		}
   }
 
   componentWillMount() {
@@ -33,7 +38,9 @@ export default class RootComponent extends Component<any, State> {
   }
 
   componentDidMount(){
-    registerForPushNotificationsAsync()
+    setTimeout(() =>{
+      registerForPushNotificationsAsync()
+    }, 500);
   }
 
   async loadFonts() {

@@ -56,7 +56,7 @@ class RankingScreen extends React.Component<Props> {
                                   source={{ uri: index % 2 === 0 ? "https://banner2.cleanpng.com/20180920/yko/kisspng-computer-icons-portable-network-graphics-avatar-ic-5ba3c66df14d32.3051789815374598219884.jpg" : "https://icon-library.net/images/avatar-icon-png/avatar-icon-png-10.jpg" }} />
                               </Row>
                               <Row alignItems="center" justifyContent="center">
-                                <Text style={{ padding: 4, color: "grey" }}>
+                                <Text style={{ padding: 4, color: "#7e1161" }}>
                                   {item.name}
                                 </Text>
                               </Row>
@@ -74,14 +74,14 @@ class RankingScreen extends React.Component<Props> {
                           </Row>
                           <Row>
                             <Col>
-                              <Text style={{fontSize: 12}}>
+                              <Text style={{fontSize: 12, color: "#B21773"}}>
                                 {"Segített: " + (index * 3)}
                               </Text>
                             </Col>
                           </Row>
                           <Row>
                             <Col>
-                              <Text style={{fontSize: 12}}>
+                              <Text style={{fontSize: 12, color: "#B21773"}}>
                                 {"Isten fizesse: " + (index * 2)}
                               </Text>
                             </Col>

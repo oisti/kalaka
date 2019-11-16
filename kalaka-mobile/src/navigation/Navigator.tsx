@@ -4,6 +4,7 @@ import { ClickerScreen, ResultScreen, RankingScreen, EventsScreen, Map } from "s
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { Text } from "native-base";
 import React from "react";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 // https://github.com/janhesters/ReactNative-ComplexNavigation/blob/master/app/navigation/Navigator.tsx
 const RootStack = createStackNavigator(
@@ -31,14 +32,19 @@ const Main = createBottomTabNavigator(
 	  defaultNavigationOptions: ({ navigation }) => ({
 		tabBarIcon: ({ focused, horizontal, tintColor }) => {
 		  const { routeName } = navigation.state;
-		  if (routeName === 'Home') {
-			return (
-			  <Text>sadasdasd</Text>
-			);
-		  } else {
-			return (
-				<Text>alap</Text>
-			);
+		  switch (routeName) {
+			case 'Home': 
+			  	return (
+					<MaterialCommunityIcons name="heart-pulse" size={25} color="#98002E"/>
+				);
+			case "Map":
+				return (
+					<MaterialCommunityIcons name="download" size={25} color="#98002E"/>
+				);
+			default: 
+				return (
+					<MaterialCommunityIcons name="heart" size={25} color="#98002E"/>
+				);
 		  }
 		},
 	  }),

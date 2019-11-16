@@ -1,13 +1,14 @@
 import { Action } from "./interfaces";
 
 export const HEROE_TYPES = {
-  SET_NAME: "SET_NAME",
+  SET_HEROE: "SET_HEROE",
   SET_ACTIVE: "SET_ACTIVE"
 };
 
-export const setName = (): Action<any> => {
+export const setHeroe = (data: object): Action<object> => {
   return {
-    type: HEROE_TYPES.SET_NAME
+    type: HEROE_TYPES.SET_HEROE,
+    payload: data
   };
 };
 

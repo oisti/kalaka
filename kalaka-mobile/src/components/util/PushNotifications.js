@@ -49,12 +49,5 @@ registerForPushNotificationsAsync = async () =>{
 
 	return token;
 
-/*
-	const dbh = firebase.firestore();
-	dbh.collection("users").add({
-		token
-	}).catch((error) => {
-		console.error("Error adding document: ", error);
-	});
-	*/
+
 }

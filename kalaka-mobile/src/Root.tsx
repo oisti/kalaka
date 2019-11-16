@@ -8,9 +8,9 @@ import Navigator from "./navigation/Navigator";
 import i18n from "i18n-js";
 import * as Localization from 'expo-localization';
 import strings from "./languages/";
-import getPushNotificationsTokenAsync from "./components/util/PushNotifications"
-import {getCurrentPos}  from "./components/util/LocationUtil"
 import {FirebaseKeys} from './constants/ApiKeys';
+import SmartUtil from './components/SmartUtil';
+
 import * as firebase from 'firebase';
 
 i18n.fallbacks = true;
@@ -38,10 +38,6 @@ export default class RootComponent extends Component<any, State> {
     this.loadFonts();
   }
 
-  componentDidMount(){
-    this.regHeroe();
-  }
-
   async loadFonts() {
     await Font.loadAsync({
       Roboto: require("../node_modules/native-base/Fonts/Roboto.ttf"),
@@ -56,13 +52,6 @@ export default class RootComponent extends Component<any, State> {
     this.setState({ isReady: true });
   }
 
-  regHeroe = async () =>{
-    const token = await getPushNotificationsTokenAsync().catch();
-    const currentPos = await getCurrentPos().catch(e=>{});
-    
-    console.log(currentPos)
-  }
-
   render() {
     return !this.state.isReady ? (
       <AppLoading />
@@ -70,6 +59,7 @@ export default class RootComponent extends Component<any, State> {
       <StyleProvider style={getTheme(variables)}>
         <Root>
           <Navigator />
+          <SmartUtil />
         </Root>
       </StyleProvider>
     );

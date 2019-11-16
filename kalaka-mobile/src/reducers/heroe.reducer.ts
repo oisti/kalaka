@@ -3,10 +3,11 @@ import { Action } from "actions/interfaces";
 import { HEROE_TYPES } from "actions";
 
 let initialState: HeroeState = {
-  heroe: {
+    id: null,
     name: "Hero",
-    active: false
-  }
+    active: false,
+    avatar: null,
+    points: 0
 };
 
 export default function(
@@ -14,10 +15,9 @@ export default function(
   action: Action<any>
 ) {
   switch (action.type) {
-    case HEROE_TYPES.SET_NAME:
+    case HEROE_TYPES.SET_HEROE:
       return {
-        ...state,
-        name: action.payload
+        ...action.payload
       };
     case HEROE_TYPES.SET_ACTIVE:
       return {

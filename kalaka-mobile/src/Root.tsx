@@ -8,7 +8,8 @@ import Navigator from "./navigation/Navigator";
 import i18n from "i18n-js";
 import * as Localization from 'expo-localization';
 import strings from "./languages/";
-import registerForPushNotificationsAsync from "./components/util/PushNotifications"
+import getPushNotificationsTokenAsync from "./components/util/PushNotifications"
+import {getCurrentPos}  from "./components/util/LocationUtil"
 import {FirebaseKeys} from './constants/ApiKeys';
 import * as firebase from 'firebase';
 
@@ -38,7 +39,7 @@ export default class RootComponent extends Component<any, State> {
   }
 
   componentDidMount(){
-    registerForPushNotificationsAsync();
+    this.regHeroe();
   }
 
   async loadFonts() {
@@ -53,6 +54,13 @@ export default class RootComponent extends Component<any, State> {
     });
 
     this.setState({ isReady: true });
+  }
+
+  regHeroe = async () =>{
+    const token = await getPushNotificationsTokenAsync().catch();
+    const currentPos = await getCurrentPos().catch(e=>{});
+    
+    console.log(currentPos)
   }
 
   render() {

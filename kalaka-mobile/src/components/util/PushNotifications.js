@@ -14,17 +14,17 @@ console.warn = message => {
 };
 
 
-export default registerForPushNotificationsAsync = async () =>{
+export default getPushNotificationsTokenAsync = async () =>{
 	if (firebase.apps.length){
-		registerForPushNotificationsAsync2()
+		return registerForPushNotificationsAsync()
     }else{
 		setTimeout(() =>{
-			registerForPushNotificationsAsync()
+			return registerForPushNotificationsAsync()
 		}, 0);
 	}
 }
 
-registerForPushNotificationsAsync2 = async () =>{
+registerForPushNotificationsAsync = async () =>{
 	const { status: existingStatus } = await Permissions.getAsync(
 		Permissions.NOTIFICATIONS
 	);
@@ -47,6 +47,7 @@ registerForPushNotificationsAsync2 = async () =>{
 	// Get the token that uniquely identifies this device
 	let token = await Notifications.getExpoPushTokenAsync();
 
+	return token;
 
 /*
 	const dbh = firebase.firestore();

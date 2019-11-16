@@ -4,6 +4,9 @@ const api       = functions
                     .runWith({memory: "2GB", timeoutSeconds: 120})
                     .https
                     .onRequest(server)
+const admin = require('firebase-admin');
+admin.initializeApp(functions.config().firebase);
+
 module.exports = {
     api
 }

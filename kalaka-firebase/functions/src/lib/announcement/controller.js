@@ -1,15 +1,39 @@
 
 const { Expo } = require('expo-server-sdk');
+const admin = require('firebase-admin');
 
 function postAnnouncement(req, res) {
     const message = req.body.message
     let success = true;
    
+    let somePushTokens = [];
+
+    let db = admin.firestore();
+
+    db.collection('heroe').where("active", "==", true).get().then((snapshot) => {
+      snapshot.forEach((doc) => {
+        somePushTokens.push(doc.id)
+      });
+      sendNot(somePushTokens, message)
+    }).catch((err) => {
+      console.log('Error getting documents', err);
+    });
+    return res.status(success ? 200 : 404)
+    .json({
+        success,
+        data:{
+            message
+        }
+    })
+  }
+function sendNot(somePushTokens, message, data) {
+    console.log(somePushTokens);
+    
     // Create a new Expo SDK client 
     let expo = new Expo();
     
     let messages = [];
-    let somePushTokens = ["ExponentPushToken[Dk6s4wJok7y1R7TwgdCZwm]","ExponentPushToken[fjso78CFfwXgthxTz9owEW]","ExponentPushToken[J-AICLJgKkrMouzT7TIP8C]","ExponentPushToken[J-AICLJgKkrMouzT7TIP8C]"];
+
     for (let pushToken of somePushTokens) {
         // Each push token looks like ExponentPushToken[xxxxxxxxxxxxxxxxxxxxxx]
       
@@ -54,14 +78,6 @@ function postAnnouncement(req, res) {
         }
     }
     })();
-
-    return res.status(success ? 200 : 404)
-              .json({
-                  success,
-                  data:{
-                      message
-                  }
-              })
 }
 
 module.exports = {

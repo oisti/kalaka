@@ -4,13 +4,13 @@ import { ClickerScreen, ResultScreen, RankingScreen, EventsScreen, Map, ProfileS
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { Text } from "native-base";
 import React from "react";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons, Ionicons, MaterialIcons } from "@expo/vector-icons";
 
 // https://github.com/janhesters/ReactNative-ComplexNavigation/blob/master/app/navigation/Navigator.tsx
 const RootStack = createStackNavigator(
 	{ ClickerScreen, ResultScreen, RankingScreen, EventsScreen, ProfileScreen },
 	{
-		initialRouteName: "ClickerScreen",
+		initialRouteName: "EventsScreen",
 		headerMode: "none"
 	}
 );
@@ -23,33 +23,46 @@ const MapStack = createStackNavigator(
 	}
 );
 
+const RankStack = createStackNavigator(
+	{ RankingScreen },
+	{
+		initialRouteName: "RankingScreen",
+		headerMode: "none"
+	}
+);
+
 const Main = createBottomTabNavigator(
 	{
-	  Home: RootStack ,
-	  Map: MapStack
+	  Események: RootStack ,
+	  Közösség: MapStack ,
+	  Vitézek: RankingScreen,
 	},
 	{
 	  defaultNavigationOptions: ({ navigation }) => ({
 		tabBarIcon: ({ focused, horizontal, tintColor }) => {
 		  const { routeName } = navigation.state;
 		  switch (routeName) {
-			case 'Home': 
+			case 'Közösség': 
 			  	return (
-					<MaterialCommunityIcons name="heart-pulse" size={25} color="#98002E"/>
+					<MaterialCommunityIcons name="heart-pulse" size={25} color="#B21773"/>
 				);
-			case "Map":
+			case "Események":
 				return (
-					<MaterialCommunityIcons name="download" size={25} color="#98002E"/>
+					<MaterialIcons name="event" size={25} color="#B21773"/>
 				);
+			  case "Vitézek":
+				  return (
+					  <Ionicons name="ios-medal" size={25} color="#B21773" />
+				  );	
 			default: 
 				return (
-					<MaterialCommunityIcons name="heart" size={25} color="#98002E"/>
+					<MaterialCommunityIcons name="heart" size={25} color="#B21773"/>
 				);
 		  }
 		},
 	  }),
 	  tabBarOptions: {
-		activeTintColor: '#FF6F00',
+		activeTintColor: '#B21773',
 		inactiveTintColor: '#263238',
 	  },
 	}

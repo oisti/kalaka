@@ -3,7 +3,7 @@ import { Content, Container, Grid, Row, Col, Text, Thumbnail } from "native-base
 import { CounterState } from "reducers/states";
 import React from "react";
 import { connect } from "react-redux";
-import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
 
 interface PropsConnectedState {

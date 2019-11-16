@@ -1,7 +1,7 @@
 import { AppHeader } from "components";
 import { Content, Container, Grid, Row, Col, Text, Thumbnail } from "native-base";
 import React from "react";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons, AntDesign, FontAwesome } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
 
 interface PropsConnectedState {
@@ -39,56 +39,173 @@ class RankingScreen extends React.Component<Props> {
           leftButtonPress={this.onLeftButtonPress}
         />
 
-        <Content padder style={{backgroundColor: "#e6e8e7"}}>
+        <Content padder style={{ backgroundColor: "#e6e8e7" }}>
 
           <Grid>
+            <Row>
+              <Col>
+                <Row style={{ borderColor: "grey", borderWidth: 1, borderRadius: 5, marginBottom: 10, elevation: 2, marginRight: 8 }}>
+                  <Col>
+                    <Row alignItems="center" justifyContent="center">
+                      <Text style={{ fontSize: 16, color: "#b21773", margin: 8 }}>
+                        {"1"}
+                      </Text>
+                    </Row>
+                    <Row alignItems="center" justifyContent="center">
+                      <Thumbnail
+                        style={{ width: 70, height: 70, borderRadius: 70 / 2 }}
+                        source={{ uri: "https://banner2.cleanpng.com/20180920/yko/kisspng-computer-icons-portable-network-graphics-avatar-ic-5ba3c66df14d32.3051789815374598219884.jpg" }} />
+                    </Row>
+                    <Row alignItems="center" justifyContent="center">
+                      <Text style={{ fontSize: 14, color: "#b21773" }}>
+                        {"Felhasználó Neve"}
+                      </Text>
+                    </Row>
+                    <Row alignItems="center" justifyContent="center">
+                      <Text style={{ fontSize: 12, color: "#b21773" }}>
+                        {"123456"}
+                      </Text>
+                    </Row>
+                    <Row>
+                      <Col alignItems="center" justifyContent="center">
+                        <TouchableOpacity>
+                          <FontAwesome name="heartbeat" size={15} style={{ margin: 16 }}  color="#696969"/>
+                        </TouchableOpacity>
+                      </Col>
+                      <Col alignItems="center" justifyContent="center">
+                        <TouchableOpacity>
+                          <AntDesign name="message1" size={15} style={{ margin: 16 }}  color="#696969"/>
+                        </TouchableOpacity>
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+              </Col>
+              <Col>
+                <Row style={{ borderColor: "grey", borderWidth: 1, borderRadius: 5, marginBottom: 10, elevation: 2 }}>
+                  <Col size={2}>
+                    <Row alignItems="center" justifyContent="center">
+                      <Text style={{ fontSize: 16, color: "#b21773", margin: 8 }}>
+                        {"2"}
+                      </Text>
+                      <Thumbnail
+                        style={{ width: 40, height: 40, borderRadius: 40 / 2 }}
+                        source={{ uri: "https://banner2.cleanpng.com/20180920/yko/kisspng-computer-icons-portable-network-graphics-avatar-ic-5ba3c66df14d32.3051789815374598219884.jpg" }} />
+                    </Row>
+                    <Row alignItems="center" justifyContent="center">
+                      <Text style={{ fontSize: 12, color: "#b21773" }}>
+                        {"Felhasználó Neve"}
+                      </Text>
+                    </Row>
+                    <Row alignItems="center" justifyContent="center">
+                      <Text style={{ fontSize: 12, color: "#b21773" }}>
+                        {"123456"}
+                      </Text>
+                    </Row>
+                  </Col>
+                  <Col size={1}>
+                    <Row alignItems="center" justifyContent="center">
+                      <TouchableOpacity>
+                        <FontAwesome name="heartbeat" size={15} style={{ margin: 16 }} color="#696969" />
+                      </TouchableOpacity>
+                    </Row>
+                    <Row alignItems="center" justifyContent="center">
+                      <TouchableOpacity>
+                        <AntDesign name="message1" size={15} style={{ margin: 8 }} color="#696969" />
+                      </TouchableOpacity>
+                    </Row>
+                  </Col>
+                </Row>
+                <Row style={{ borderColor: "grey", borderWidth: 1, borderRadius: 5, marginBottom: 10, elevation: 2 }}>
+                  <Col size={2}>
+                    <Row alignItems="center" justifyContent="center">
+                      <Text style={{ fontSize: 16, color: "#b21773", margin: 8 }}>
+                        {"3"}
+                      </Text>
+                      <Thumbnail
+                        style={{ width: 40, height: 40, borderRadius: 40 / 2 }}
+                        source={{ uri: "https://banner2.cleanpng.com/20180920/yko/kisspng-computer-icons-portable-network-graphics-avatar-ic-5ba3c66df14d32.3051789815374598219884.jpg" }} />
+                    </Row>
+                    <Row alignItems="center" justifyContent="center">
+                      <Text style={{ fontSize: 12, color: "#b21773" }}>
+                        {"Felhasználó Neve"}
+                      </Text>
+                    </Row>
+                    <Row alignItems="center" justifyContent="center">
+                      <Text style={{ fontSize: 12, color: "#b21773" }}>
+                        {"123456"}
+                      </Text>
+                    </Row>
+                  </Col>
+                  <Col size={1}>
+                    <Row alignItems="center" justifyContent="center">
+                      <TouchableOpacity>
+                        <FontAwesome name="heartbeat" size={15} style={{ margin: 16 }} color="#696969" />
+                      </TouchableOpacity>
+                    </Row>
+                    <Row alignItems="center" justifyContent="center">
+                      <TouchableOpacity>
+                        <AntDesign name="message1" size={15} style={{ margin: 8 }} color="#696969" />
+                      </TouchableOpacity>
+                    </Row>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
             {list.map((item, index) => {
               return (
                 <Row key={index} style={{ borderColor: "grey", borderWidth: 1, borderRadius: 5, marginBottom: 10, elevation: 2 }}>
                   <Col>
-                    <TouchableOpacity>
                       <Row>
-                        <Col size={3}>
+                        <Col size={1} alignItems="center" justifyContent="center">
+                          <Text style={{ fontSize: 16, color: "#b21773", margin: 8 }}>
+                            {index + 4}
+                          </Text>
+                        </Col>
+                        <Col size={1}>
                           <Row>
                             <Col alignItems="center" justifyContent="center">
                               <Row style={{ padding: 4 }} alignItems="center" justifyContent="center">
                                 <Thumbnail
+                                  style={{ width: 40, height: 40, borderRadius: 40 / 2 }}
                                   source={{ uri: index % 2 === 0 ? "https://banner2.cleanpng.com/20180920/yko/kisspng-computer-icons-portable-network-graphics-avatar-ic-5ba3c66df14d32.3051789815374598219884.jpg" : "https://icon-library.net/images/avatar-icon-png/avatar-icon-png-10.jpg" }} />
-                              </Row>
-                              <Row alignItems="center" justifyContent="center">
-                                <Text style={{ padding: 4, color: "#7e1161" }}>
-                                  {item.name}
-                                </Text>
                               </Row>
                             </Col>
                           </Row>
                         </Col>
-                        <Col size={4} alignItems="center" justifyContent="center">
+                        <Col size={2}>
+                          <Row>
+                            <Col alignItems="center" justifyContent="center">
+                              <Text style={{ padding: 4, color: "#7e1161", fontSize: 12 }}>
+                                {item.name}
+                              </Text>
+                            </Col>
+                          </Row>
+                        </Col>
+                        <Col size={1} alignItems="center" justifyContent="center">
+                          <Row>
+                            <Col alignItems="center" justifyContent="center">
+                              <Text style={{ padding: 4, color: "#7e1161", fontSize: 10 }}>
+                                {123456}
+                              </Text>
+                            </Col>
+                          </Row>
+                        </Col>
+                        <Col size={1}>
                           <Row alignItems="center" justifyContent="center">
-                            <Col style={{flexDirection: "row", paddingTop: 8}}>
-                              <MaterialCommunityIcons name="heart-pulse" size={25} color="#98002E"/>
-                              <Text style={{ padding: 4, color: "grey" }}>
-                                {index+1}
-                              </Text>
-                            </Col>
+                            <TouchableOpacity>
+                              <FontAwesome name="heartbeat" size={15} style={{ margin: 16 }} color="#696969" />
+                            </TouchableOpacity>
                           </Row>
-                          <Row>
-                            <Col>
-                              <Text style={{fontSize: 12, color: "#B21773"}}>
-                                {"Segített: " + (index * 3)}
-                              </Text>
-                            </Col>
-                          </Row>
-                          <Row>
-                            <Col>
-                              <Text style={{fontSize: 12, color: "#B21773"}}>
-                                {"Isten fizesse: " + (index * 2)}
-                              </Text>
-                            </Col>
+                        </Col>
+                        <Col size={1}>
+                          <Row alignItems="center" justifyContent="center">
+                            <TouchableOpacity>
+                              <AntDesign name="message1" size={15} style={{ margin: 8 }} color="#696969" />
+                            </TouchableOpacity>
                           </Row>
                         </Col>
                       </Row>
-                    </TouchableOpacity>
                   </Col>
                 </Row>)
             })}

@@ -57,6 +57,9 @@ class EventsScreen extends React.Component<Props> {
                                     elevation: 1,
                                     marginLeft: 5,
                                     marginRight: 5,
+                                    borderTopLeftRadius: 5,
+                                    borderTopRightRadius: 5,
+                                    overflow: "hidden",
                                     marginTop: 10 }}>
                                     <Col>
                                         <Row>

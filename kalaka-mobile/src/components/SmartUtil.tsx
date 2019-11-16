@@ -44,7 +44,7 @@ class SmartUtil extends Component<Props> {
 				const data = {
 					name: 'Csiki Titan',
 					points: Math.round(Math.random() * 1000),
-					active: false,
+					active: true,
 					avatar: null,
 				}
 				dbh.collection("heroe").doc(token).set(data).then(() =>{

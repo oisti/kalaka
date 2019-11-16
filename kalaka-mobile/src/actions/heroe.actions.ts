@@ -12,8 +12,9 @@ export const setHeroe = (data: object): Action<object> => {
   };
 };
 
-export const setActive = (): Action<any> => {
+export const setActive = (active: boolean): Action<any> => {
   return {
-    type: HEROE_TYPES.SET_ACTIVE
+    type: HEROE_TYPES.SET_ACTIVE,
+    payload: active
   };
 };

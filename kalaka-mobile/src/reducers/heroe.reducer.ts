@@ -22,7 +22,7 @@ export default function(
     case HEROE_TYPES.SET_ACTIVE:
       return {
         ...state,
-        value: action.payload
+        active: action.payload
       };
     default:
       return state;

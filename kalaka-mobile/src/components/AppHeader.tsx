@@ -2,14 +2,37 @@ import React, { Component } from "react";
 import { View, StatusBar, StyleSheet, Platform, TouchableOpacity } from "react-native";
 import { Body, Button, Header, Icon, Left, Title, Thumbnail } from "native-base";
 import TextInput from "./TextInput";
+import { connect } from "react-redux";
+import * as firebase from 'firebase';
+import { getCurrentPos } from "./util/LocationUtil"
 
-interface Props {
+interface PropsConnectedState {
+	heroe: object;
+}
+
+interface PropsConnectedDispatcher {
+	setHeroe: (payload: object) => void;
+}
+interface Props extends PropsConnectedState, PropsConnectedDispatcher {
   headerText: string;
   showBackButton?: boolean;
   leftButtonPress?: () => void;
 }
 
-export default class AppHeader extends Component<Props> {
+class AppHeader extends Component<Props> {
+
+
+  activeHandler = async () => {
+    const coordinate = await getCurrentPos().catch(e=>{ return {latitude: 46.2916805, longitude: 25.2881355}  })
+    const hoeroeId = this.props.heroe.id;
+    const help = {
+      hoeroeId: hoeroeId,
+      coordinate,
+      type: "heroe"
+    }
+    const map = firebase.database().ref().child('map');
+    map.push(help);
+  }
 
   render() {
     return (
@@ -45,12 +68,41 @@ export default class AppHeader extends Component<Props> {
                   source={{ uri: "https://icon-library.net/images/avatar-icon-png/avatar-icon-png-10.jpg" }} />
               </TouchableOpacity>
             }
+            <Button onPress={() => this.activeHandler()}>
+                <Icon style={styles.backButtonIcon} name="arrow-back" />
+              </Button>
           </Body>
         </Header>
       </View>
     );
   }
 }
+
+const mapStateToProps = ({
+	heroe
+}: {
+	heroe: HeroeState;
+}): PropsConnectedState => {
+	return {
+		heroe: heroe
+	};
+};
+
+
+const mapDispatchToProps = (
+	dispatch: Dispatch<Action<any>>
+): PropsConnectedDispatcher => {
+	return {
+		setHeroe: (payload) => {
+			return dispatch(Actions.setHeroe(payload));
+		}
+	};
+};
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(AppHeader as React.ComponentClass<Props>);
 
 const styles = StyleSheet.create({
   headerBackground: {

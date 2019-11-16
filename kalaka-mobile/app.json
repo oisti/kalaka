@@ -24,10 +24,18 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "config": {
+        "googleMapsApiKey": "AIzaSyCy0xgok1b3bQojqPXZTSIaoFo_489O0TQ"
+      } 
     },
     "android": {
-      "package": "eu.mgs.kalaka"
+      "package": "eu.mgs.kalaka",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyCy0xgok1b3bQojqPXZTSIaoFo_489O0TQ"
+        }
+      }
     }
   }
 }

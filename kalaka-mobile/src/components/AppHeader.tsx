@@ -9,7 +9,22 @@ interface Props {
   leftButtonPress?: () => void;
 }
 
+
 export default class AppHeader extends Component<Props> {
+
+
+  activeHandler = async () => {
+    const coordinate = await getCurrentPos().catch(e=>{ return {latitude: 46.2916805, longitude: 25.2881355}  })
+    const hoeroeId = this.props.heroe.id;
+    const help = {
+      hoeroeId: hoeroeId,
+      coordinate,
+      type: "heroe"
+    }
+    //const map = firebase.database().ref().child('map');
+   // map.push(help);
+  }
+
 
   render() {
     return (

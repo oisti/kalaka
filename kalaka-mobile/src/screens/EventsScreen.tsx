@@ -40,7 +40,7 @@ class EventsScreen extends React.Component<Props> {
                     leftButtonPress={this.onLeftButtonPress}
                 />
 
-                <Content padder>
+                <Content padder style={{backgroundColor: "#e6e8e7"}}>
 
                     <Grid>
                         {list.map((item, index) => {
@@ -55,12 +55,12 @@ class EventsScreen extends React.Component<Props> {
                                                 : "https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/2017/12/22223742/Events-1200x630.jpg" }} />
                                         </Row>
                                         <Row>
-                                            <Text style={{ paddingBottom: 4, paddingLeft: 8, fontSize: 14, color: "grey" }}>
+                                            <Text style={{ paddingBottom: 4, paddingLeft: 8, fontSize: 14, color: "#7e1161" }}>
                                                 {"Esemény neve"}
                                             </Text>
                                         </Row>
                                         <Row>
-                                            <Text style={{ paddingBottom: 4, paddingLeft: 8, fontSize: 10, color: "grey" }}>
+                                            <Text style={{ paddingBottom: 4, paddingLeft: 8, fontSize: 10, color: "#B21773" }}>
                                                 {"Vestibulum euismod eros a lectus malesuada dignissim. Fusce ac dui arcu. Proin sodales tristique vestibulum. Ut nec dui id tortor mollis dapibus. Ut eget hendrerit orci. Sed in porta metus. Donec ut elit at ante porta facilisis."}
                                             </Text>
                                         </Row>
@@ -68,8 +68,8 @@ class EventsScreen extends React.Component<Props> {
                                             <Col alignItems="center" justifyContent="center">
                                                 <TouchableOpacity>
                                                     <Row alignItems="center" justifyContent="center">  
-                                                    <Ionicons name="ios-star-outline" size={20} color="grey" />
-                                                    <Text style={{fontSize: 12, color: "grey", marginLeft: 4}}>
+                                                    <Ionicons name="ios-star-outline" size={20} color="#f73D10" />
+                                                    <Text style={{fontSize: 12, color: "#f73D10", marginLeft: 4}}>
                                                         {"Érdekel"}
                                                     </Text>
                                                     </Row>
@@ -78,8 +78,8 @@ class EventsScreen extends React.Component<Props> {
                                             <Col alignItems="center" justifyContent="center">
                                                 <TouchableOpacity>
                                                 <Row alignItems="center" justifyContent="center">  
-                                                    <MaterialCommunityIcons name="share-outline" size={20} color="grey" />
-                                                    <Text style={{fontSize: 12, color: "grey", marginLeft: 4}}>
+                                                    <MaterialCommunityIcons name="share-outline" size={20} color="#f73D10" />
+                                                    <Text style={{fontSize: 12, color: "#f73D10", marginLeft: 4}}>
                                                         {"Megosztás"}
                                                     </Text>
                                                 </Row>

@@ -39,7 +39,7 @@ class RankingScreen extends React.Component<Props> {
           leftButtonPress={this.onLeftButtonPress}
         />
 
-        <Content padder>
+        <Content padder style={{backgroundColor: "#e6e8e7"}}>
 
           <Grid>
             {list.map((item, index) => {

@@ -1,8 +1,6 @@
 import { AppHeader } from "components";
 import { Content, Container, Grid, Row, Col, Thumbnail, Text } from "native-base";
-import { CounterState } from "reducers/states";
 import React from "react";
-import { connect } from "react-redux";
 
 interface PropsConnectedState {
     value: number;
@@ -31,7 +29,7 @@ class ProfileScreen extends React.Component<Props> {
                     leftButtonPress={this.onLeftButtonPress}
                 />
 
-                <Content padder>
+                <Content padder style={{backgroundColor: "#e6e8e7"}}>
                     <Grid>
                         <Row>
                             <Col style={{ padding: 4 }} alignItems="center" justifyContent="center">
@@ -41,7 +39,7 @@ class ProfileScreen extends React.Component<Props> {
                         </Row>
                         <Row>
                             <Col style={{ padding: 4 }} alignItems="center" justifyContent="center">
-                                <Text>
+                                <Text style={{color: "#7e1161"}}>
                                     {"Fehasználó neve"}
                                 </Text>
                             </Col>
@@ -53,17 +51,5 @@ class ProfileScreen extends React.Component<Props> {
     }
 }
 
-const mapStateToProps = ({
-    counter
-}: {
-    counter: CounterState;
-}): PropsConnectedState => {
-    return {
-        value: counter.value
-    };
-};
 
-export default connect(
-    mapStateToProps,
-    null
-)(ProfileScreen as React.ComponentClass<Props>);
+export default(ProfileScreen as React.ComponentClass<Props>);

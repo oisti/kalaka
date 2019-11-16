@@ -35,11 +35,11 @@ class RankingScreen extends React.Component<Props> {
       <Container>
         <AppHeader
           showBackButton={true}
-          headerText={"Rangsor"}
+          searchBar={true}
           leftButtonPress={this.onLeftButtonPress}
         />
 
-        <Content padder style={{ backgroundColor: "#e6e8e7" }}>
+        <Content padder style={{ backgroundColor: "#FFFFFF" }}>
 
           <Grid>
             <Row>

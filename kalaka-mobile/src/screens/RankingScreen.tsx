@@ -44,7 +44,20 @@ class RankingScreen extends React.Component<Props> {
           <Grid>
             <Row>
               <Col>
-                <Row style={{ borderColor: "grey", borderWidth: 1, borderRadius: 5, marginBottom: 10, elevation: 2, marginRight: 8 }}>
+                <Row style={{  borderRadius: 2,
+                                    borderColor: '#ddd',
+                                    borderBottomWidth: 0,
+                                    shadowColor: '#000',
+                                    shadowOffset: { width: 0, height: 2 },
+                                    shadowOpacity: 0.8,
+                                    shadowRadius: 2,
+                                    elevation: 2,
+                                    marginLeft: 5,
+                                    marginRight: 5,
+                                    borderTopLeftRadius: 5,
+                                    borderTopRightRadius: 5,
+                                    overflow: "hidden",
+                                    marginTop: 10 }}>
                   <Col>
                     <Row alignItems="center" justifyContent="center">
                       <Text style={{ fontSize: 16, color: "#b21773", margin: 8 }}>
@@ -62,7 +75,7 @@ class RankingScreen extends React.Component<Props> {
                       </Text>
                     </Row>
                     <Row alignItems="center" justifyContent="center">
-                      <Text style={{ fontSize: 12, color: "#b21773" }}>
+                      <Text style={{ fontSize: 12, color: "#696969" }}>
                         {"123456"}
                       </Text>
                     </Row>
@@ -82,7 +95,20 @@ class RankingScreen extends React.Component<Props> {
                 </Row>
               </Col>
               <Col>
-                <Row style={{ borderColor: "grey", borderWidth: 1, borderRadius: 5, marginBottom: 10, elevation: 2 }}>
+                <Row style={{  borderRadius: 2,
+                                    borderColor: '#ddd',
+                                    borderBottomWidth: 0,
+                                    shadowColor: '#000',
+                                    shadowOffset: { width: 0, height: 2 },
+                                    shadowOpacity: 0.8,
+                                    shadowRadius: 2,
+                                    elevation: 2,
+                                    marginLeft: 5,
+                                    marginRight: 5,
+                                    borderTopLeftRadius: 5,
+                                    borderTopRightRadius: 5,
+                                    overflow: "hidden",
+                                    marginTop: 10 }}>
                   <Col size={2}>
                     <Row alignItems="center" justifyContent="center">
                       <Text style={{ fontSize: 16, color: "#b21773", margin: 8 }}>
@@ -98,7 +124,7 @@ class RankingScreen extends React.Component<Props> {
                       </Text>
                     </Row>
                     <Row alignItems="center" justifyContent="center">
-                      <Text style={{ fontSize: 12, color: "#b21773" }}>
+                      <Text style={{ fontSize: 12, color: "#696969" }}>
                         {"123456"}
                       </Text>
                     </Row>
@@ -116,7 +142,20 @@ class RankingScreen extends React.Component<Props> {
                     </Row>
                   </Col>
                 </Row>
-                <Row style={{ borderColor: "grey", borderWidth: 1, borderRadius: 5, marginBottom: 10, elevation: 2 }}>
+                <Row style={{  borderRadius: 2,
+                                    borderColor: '#ddd',
+                                    borderBottomWidth: 0,
+                                    shadowColor: '#000',
+                                    shadowOffset: { width: 0, height: 2 },
+                                    shadowOpacity: 0.8,
+                                    shadowRadius: 2,
+                                    elevation: 2,
+                                    marginLeft: 5,
+                                    marginRight: 5,
+                                    borderTopLeftRadius: 5,
+                                    borderTopRightRadius: 5,
+                                    overflow: "hidden",
+                                    marginTop: 10 }}>
                   <Col size={2}>
                     <Row alignItems="center" justifyContent="center">
                       <Text style={{ fontSize: 16, color: "#b21773", margin: 8 }}>
@@ -132,7 +171,7 @@ class RankingScreen extends React.Component<Props> {
                       </Text>
                     </Row>
                     <Row alignItems="center" justifyContent="center">
-                      <Text style={{ fontSize: 12, color: "#b21773" }}>
+                      <Text style={{ fontSize: 12, color: "#696969" }}>
                         {"123456"}
                       </Text>
                     </Row>
@@ -154,7 +193,20 @@ class RankingScreen extends React.Component<Props> {
             </Row>
             {list.map((item, index) => {
               return (
-                <Row key={index} style={{ borderColor: "grey", borderWidth: 1, borderRadius: 5, marginBottom: 10, elevation: 2 }}>
+                <Row key={index} style={{  borderRadius: 2,
+                                    borderColor: '#ddd',
+                                    borderBottomWidth: 0,
+                                    shadowColor: '#000',
+                                    shadowOffset: { width: 0, height: 2 },
+                                    shadowOpacity: 0.8,
+                                    shadowRadius: 2,
+                                    elevation: 2,
+                                    marginLeft: 5,
+                                    marginRight: 5,
+                                    borderTopLeftRadius: 5,
+                                    borderTopRightRadius: 5,
+                                    overflow: "hidden",
+                                    marginTop: 10 }}>
                   <Col>
                       <Row>
                         <Col size={1} alignItems="center" justifyContent="center">
@@ -185,7 +237,7 @@ class RankingScreen extends React.Component<Props> {
                         <Col size={1} alignItems="center" justifyContent="center">
                           <Row>
                             <Col alignItems="center" justifyContent="center">
-                              <Text style={{ padding: 4, color: "#7e1161", fontSize: 10 }}>
+                              <Text style={{ padding: 4, color: "#696969", fontSize: 10 }}>
                                 {123456}
                               </Text>
                             </Col>

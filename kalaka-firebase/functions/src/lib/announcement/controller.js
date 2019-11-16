@@ -15,6 +15,7 @@ function postAnnouncement(req, res) {
         somePushTokens.push(doc.id)
       });
       sendNot(somePushTokens, message)
+      return true
     }).catch((err) => {
       console.log('Error getting documents', err);
     });
@@ -66,7 +67,7 @@ function sendNot(somePushTokens, message, data) {
     // time, which nicely spreads the load out over time:
     for (let chunk of chunks) {
         try {
-        let ticketChunk = await expo.sendPushNotificationsAsync(chunk);
+        let ticketChunk =  expo.sendPushNotificationsAsync(chunk);
         console.log(ticketChunk);
         tickets.push(...ticketChunk);
         // NOTE: If a ticket contains an error code in ticket.details.error, you

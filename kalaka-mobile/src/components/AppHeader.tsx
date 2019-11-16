@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StatusBar, StyleSheet, Platform } from "react-native";
+import { View, StatusBar, StyleSheet, Platform, Switch } from "react-native";
 import { Body, Button, Header, Icon, Left, Right, Title } from "native-base";
 
 interface Props {
@@ -9,6 +9,16 @@ interface Props {
 }
 
 export default class AppHeader extends Component<Props> {
+  constructor(props){
+    super(props);
+    this.state = {
+        value: false,
+    }
+}
+  onChange = () =>{
+    this.setState({value: !this.state.value});
+  }
+
   render() {
     return (
       <View style={styles.androidMargin}>
@@ -21,8 +31,9 @@ export default class AppHeader extends Component<Props> {
               </Button>
             )}
           </Left>
-          <Body>
+          <Body style={{flexDirection: "row"}}>
             <Title style={styles.title}>{this.props.headerText}</Title>
+            <Switch value={this.state.value} onChange={()=>{this.onChange()}} thumbColor={"#F73D10"} trackColor={{false: "#F6D018", true: "#F73D10"}}/>
           </Body>
           <Right />
         </Header>

@@ -1,6 +1,6 @@
 import React, { Component, Dispatch } from "react";
 import getPushNotificationsTokenAsync from "./util/PushNotifications"
-import {getCurrentPos}  from "./util/LocationUtil"
+import { getCurrentPos } from "./util/LocationUtil"
 import * as firebase from 'firebase';
 import { connect } from "react-redux";
 import { HeroeState } from "reducers/states";
@@ -9,88 +9,93 @@ import * as Actions from "actions";
 
 
 interface PropsConnectedState {
-   heroe: object;
+	heroe: object;
 }
 
 interface PropsConnectedDispatcher {
-  setHeroe: (payload: object) => void;
+	setHeroe: (payload: object) => void;
 }
 
 interface Props extends PropsConnectedState, PropsConnectedDispatcher {
-    navigation: { navigate: (screen: string) => void };
+	navigation: { navigate: (screen: string) => void };
 }
 
 class SmartUtil extends Component<Props> {
-  constructor(props: any) {
-    super(props);
+	constructor(props: any) {
+		super(props);
 
-  }
+	}
 
-  componentDidMount(){
-    this.regHeroe();
-  }
+	componentDidMount() {
+		this.regHeroe();
+	}
 
- 
-  regHeroe = async () =>{
-    const token = await getPushNotificationsTokenAsync().catch();
-    const dbh = firebase.firestore();
 
-    var docRef = dbh.collection("heroe").doc(token);
-		docRef.get().then((doc) =>{
+	regHeroe = async () => {
+		const token = await getPushNotificationsTokenAsync().catch();
+		const dbh = firebase.firestore();
+
+		var docRef = dbh.collection("heroe").doc(token);
+		docRef.get().then((doc) => {
 			if (doc.exists) {
-
-                this.props.setHeroe(doc.data())
+				this.props.setHeroe({ id: token, ...doc.data() })
 
 			} else {
-      
-                dbh.collection("heroe").doc(token).set({
-                    name: 'Csiki Titan',
-                    points: Math.round(Math.random() * 1000),
-                }).catch((error) => {
-                    console.error("Error adding document: ", error);
-                });
-                    
-            }
-        }).catch((error) =>{
-            console.log("Error getting document:", error);
-        });
+				const data = {
+					name: 'Csiki Titan',
+					points: Math.round(Math.random() * 1000),
+					active: false,
+					avatar: null,
+				}
+				dbh.collection("heroe").doc(token).set(data).then(() =>{
+					this.props.setHeroe({ id: token, ...data })
+					console.log(data)
+				}).catch((error) => {
+					console.error("Error adding document: ", error);
+				});
+
+			}
+		}).catch((error) => {
+			console.log("Error getting document:", error);
+		});
 
 
-    //const currentPos = await getCurrentPos().catch(e=>{});
-    
-   // console.log(currentPos)
-  }
+		//const currentPos = await getCurrentPos().catch(e=>{});
 
-  render() {
-    return null
-  }
+		// console.log(currentPos)
+	}
+
+	render() {
+		//console.log(this.props.heroe)
+		return null
+	}
 }
 
 
 const mapStateToProps = ({
-  heroe
+	heroe
 }: {
-  heroe: HeroeState;
+	heroe: HeroeState;
 }): PropsConnectedState => {
-  return {
-    heroe: heroe
-  };
+	return {
+		heroe: heroe
+	};
 };
 
 
 const mapDispatchToProps = (
-  dispatch: Dispatch<Action<any>>
+	dispatch: Dispatch<Action<any>>
 ): PropsConnectedDispatcher => {
-  return {
-    setHeroe: (payload) => {
-      return dispatch(Actions.setHeroe(payload));
-    }
-  };
+	return {
+		setHeroe: (payload) => {
+			return dispatch(Actions.setHeroe(payload));
+		}
+	};
 };
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+	mapStateToProps,
+	mapDispatchToProps
 )(SmartUtil as React.ComponentClass<Props>);
 
 

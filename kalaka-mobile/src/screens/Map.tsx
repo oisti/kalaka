@@ -6,6 +6,7 @@ import { CircularProgress} from  "components";
 import MapView, {Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
+import * as firebase from 'firebase';
 
 interface Props {
     navigation: { navigate: (screen: string) => void };
@@ -20,12 +21,19 @@ class Map extends React.Component<Props> {
             showProducer: false,
             loading: true,
             distance: null,
-            initialRegion: null
+            initialRegion: null,
+            coordinates: []
         }
     }
 
     componentDidMount() {
         this.getCurrentLoc();
+        const dbRefObject = firebase.database().ref().child('map');
+        dbRefObject.on('value', snap => {
+            const result = Object.values(snap.val());
+            console.log("result", result);
+            this.setState({coordinates: result});
+        });
     }
 
     getCurrentLoc = async () => {
@@ -43,8 +51,12 @@ class Map extends React.Component<Props> {
         } 
     }
 
+
+
     mapClick = (e) => {
         const index = parseInt(e.nativeEvent.id, 10);
+        const map = firebase.database().ref().child('map');
+        map.push(e.nativeEvent.coordinate);
         if ( isNaN(index)) {
             //this.setState({showProducer: false});
         } else {
@@ -79,8 +91,16 @@ class Map extends React.Component<Props> {
                             }}
                             provider={MapView.PROVIDER_GOOGLE}
                         >
-                    </MapView>
-                }
+                            {this.state.coordinates.map((coordinate, i) => (
+                                <Marker
+                                    identifier={i.toString()}
+                                    key={i}
+                                    onPress={() => this.markerClick(i)}
+                                    coordinate={{latitude: coordinate.latitude, longitude: coordinate.longitude}}
+                                />
+                            ))}
+                        </MapView>
+                    }
                 </View> 
                 </Content>
             </>

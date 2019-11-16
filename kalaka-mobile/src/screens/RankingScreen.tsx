@@ -1,8 +1,6 @@
 import { AppHeader } from "components";
 import { Content, Container, Grid, Row, Col, Text, Thumbnail } from "native-base";
-import { CounterState } from "reducers/states";
 import React from "react";
-import { connect } from "react-redux";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
 
@@ -101,17 +99,4 @@ class RankingScreen extends React.Component<Props> {
   }
 }
 
-const mapStateToProps = ({
-  counter
-}: {
-  counter: CounterState;
-}): PropsConnectedState => {
-  return {
-    value: counter.value
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  null
-)(RankingScreen as React.ComponentClass<Props>);
+export default (RankingScreen as React.ComponentClass<Props>);

@@ -1,1 +1,1 @@
-export * from "./counter.actions";
+export * from "./heroe.actions";

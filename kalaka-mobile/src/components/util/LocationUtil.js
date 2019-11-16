@@ -44,5 +44,4 @@ export const getCurrentPos = async () => {
         return Promise.reject('Location permission not granted')
     }
     return loca;
-   
 }

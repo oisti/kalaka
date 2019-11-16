@@ -2,8 +2,8 @@
     UserModel
 } from '../models';*/
 
-import { CounterState } from "./CounterState";
+import { HeroeState } from "./HeroeState";
 
 export interface RootState {
-  counter: CounterState;
+  heroe: HeroeState;
 }

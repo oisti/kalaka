@@ -1,12 +1,12 @@
 import { Result, AppHeader } from "components";
 import { Content, Container } from "native-base";
-import { CounterState } from "reducers/states";
+//import { CounterState } from "reducers/states";
 import React from "react";
 import { connect } from "react-redux";
 import i18n from "i18n-js";
 
 interface PropsConnectedState {
-  value: number;
+ // value: number;
 }
 
 interface Props extends PropsConnectedState {
@@ -32,13 +32,14 @@ class ResultScreen extends React.Component<Props> {
         />
 
         <Content padder>
-          <Result value={this.props.value} />
+         {/* <Result value={this.props.value} /> */} 
         </Content>
       </Container>
     );
   }
 }
 
+/*
 const mapStateToProps = ({
   counter
 }: {
@@ -53,3 +54,6 @@ export default connect(
   mapStateToProps,
   null
 )(ResultScreen as React.ComponentClass<Props>);
+
+*/
+export default (ResultScreen as React.ComponentClass<Props>);

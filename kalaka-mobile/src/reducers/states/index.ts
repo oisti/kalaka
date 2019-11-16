@@ -1,2 +1,2 @@
 export * from "./RootState";
-export * from "./CounterState";
+export * from "./HeroeState";

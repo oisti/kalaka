@@ -1,8 +1,6 @@
 import { AppHeader } from "components";
 import { Content, Container, Grid, Row, Col, Text, Thumbnail } from "native-base";
-import { CounterState } from "reducers/states";
 import React from "react";
-import { connect } from "react-redux";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { View, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -98,17 +96,4 @@ class EventsScreen extends React.Component<Props> {
     }
 }
 
-const mapStateToProps = ({
-    counter
-}: {
-    counter: CounterState;
-}): PropsConnectedState => {
-    return {
-        value: counter.value
-    };
-};
-
-export default connect(
-    mapStateToProps,
-    null
-)(EventsScreen as React.ComponentClass<Props>);
+export default (EventsScreen as React.ComponentClass<Props>);

@@ -1,6 +1,6 @@
 import { Clicker, AppHeader } from "components";
 import { Content, Container } from "native-base";
-import { CounterState } from "reducers/states";
+//import { CounterState } from "reducers/states";
 import { Action } from "actions/interfaces";
 import * as Actions from "actions";
 import React, { Dispatch } from "react";
@@ -8,12 +8,12 @@ import { connect } from "react-redux";
 import i18n from "i18n-js";
 
 interface PropsConnectedState {
-  value: number;
+ // value: number;
 }
 interface PropsConnectedDispatcher {
-  handlePressIncrement: () => void;
+//  handlePressIncrement: () => void;
   
-  handlePressDecrement: () => void;
+//  handlePressDecrement: () => void;
 }
 
 interface Props extends PropsConnectedState, PropsConnectedDispatcher {
@@ -34,17 +34,18 @@ class ClickerScreen extends React.Component<Props> {
       <Container>
         <AppHeader headerText={i18n.t("clickerHeader")} />
         <Content padder>
+          {/*
           <Clicker
             showResult={this.onShowResultPress}
             handlePressIncrement={this.props.handlePressIncrement}
             handlePressDecrement={this.props.handlePressDecrement}
-          />
+          />*/}
         </Content>
       </Container>
     );
   }
 }
-
+/*
 const mapStateToProps = ({
   counter
 }: {
@@ -68,7 +69,11 @@ const mapDispatchToProps = (
   };
 };
 
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(ClickerScreen as React.ComponentClass<Props>);
+*/
+
+export default (ClickerScreen as React.ComponentClass<Props>);

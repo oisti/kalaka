@@ -1,7 +1,7 @@
 import { AppHeader } from "components";
 import { Content, Container, Grid, Row, Col, Text, Thumbnail } from "native-base";
 import React from "react";
-import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { Ionicons, AntDesign } from "@expo/vector-icons";
 import { View, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
@@ -40,12 +40,12 @@ class EventsScreen extends React.Component<Props> {
                     leftButtonPress={this.onLeftButtonPress}
                 />
 
-                <Content padder style={{backgroundColor: "#e6e8e7"}}>
+                <Content padder style={{backgroundColor: "#FFFFFF"}}>
 
                     <Grid>
                         {list.map((item, index) => {
                             return (
-                                <Row key={index} style={{ borderColor: "grey", borderWidth: 1, borderRadius: 5, marginBottom: 10, elevation: 2 }}>
+                                <Row key={index} style={{ borderColor: "#bfbfbf", borderWidth: 1, borderRadius: 5, marginBottom: 10, elevation: 2, overflow: "hidden" }}>
                                     <Col>
                                         <Row>
                                             <Image
@@ -55,21 +55,35 @@ class EventsScreen extends React.Component<Props> {
                                                 : "https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/2017/12/22223742/Events-1200x630.jpg" }} />
                                         </Row>
                                         <Row>
-                                            <Text style={{ paddingBottom: 4, paddingLeft: 8, fontSize: 14, color: "#7e1161" }}>
-                                                {"Esemény neve"}
+                                            <Text style={{ paddingLeft: 8, paddingTop: 8, fontSize: 11, color: "#f73D10" }}>
+                                                {"MOST TÖRTÉNIK"}
                                             </Text>
                                         </Row>
                                         <Row>
-                                            <Text style={{ paddingBottom: 4, paddingLeft: 8, fontSize: 10, color: "#B21773" }}>
-                                                {"Vestibulum euismod eros a lectus malesuada dignissim. Fusce ac dui arcu. Proin sodales tristique vestibulum. Ut nec dui id tortor mollis dapibus. Ut eget hendrerit orci. Sed in porta metus. Donec ut elit at ante porta facilisis."}
+                                            <Text style={{ paddingLeft: 8, color: "black", fontWeight: "bold", fontSize: 11 }}>
+                                                {"The House Hackathon"}
                                             </Text>
                                         </Row>
-                                        <Row style={{ padding: 4, paddingTop: 0 }}>
+                                        <Row>
+                                            <Text style={{ paddingLeft: 8, fontSize: 10, color: "#666666" }}>
+                                                {"Magtár - Csíkszereda"}
+                                            </Text>
+                                        </Row>
+                                        <Row style={{paddingLeft: 8, paddingTop: 4, flexDirection: "row"}}>
+                                        <Image
+                                                style={{ width: 15, height: 15 }}
+                                                source={{ uri: "https://png.pngtree.com/png-vector/20190321/ourmid/pngtree-vector-users-icon-png-image_856952.jpg"}} />
+                                        <Text style={{fontSize:10, marginLeft: 3, color: "#666666" }}>
+                                            {"Ervin és további 14 Hős ott lesz"}
+                                        </Text> 
+                                        </Row>
+                                        <Row style={{borderBottomColor: "#666666", borderBottomWidth: 1, margin: 8, marginBottom: 4}}></Row>
+                                        <Row style={{ padding: 8, paddingTop: 0 }}>
                                             <Col alignItems="center" justifyContent="center">
                                                 <TouchableOpacity>
                                                     <Row alignItems="center" justifyContent="center">  
-                                                    <Ionicons name="ios-star-outline" size={20} color="#f73D10" />
-                                                    <Text style={{fontSize: 12, color: "#f73D10", marginLeft: 4}}>
+                                                    <Ionicons name="ios-star-outline" size={20} color="#666666" />
+                                                    <Text style={{fontSize: 9, color: "#666666", marginLeft: 4}}>
                                                         {"Érdekel"}
                                                     </Text>
                                                     </Row>
@@ -78,8 +92,8 @@ class EventsScreen extends React.Component<Props> {
                                             <Col alignItems="center" justifyContent="center">
                                                 <TouchableOpacity>
                                                 <Row alignItems="center" justifyContent="center">  
-                                                    <MaterialCommunityIcons name="share-outline" size={20} color="#f73D10" />
-                                                    <Text style={{fontSize: 12, color: "#f73D10", marginLeft: 4}}>
+                                                    <AntDesign name="sharealt" size={20} color="#666666" />
+                                                    <Text style={{fontSize: 9, color: "#666666", marginLeft: 4}}>
                                                         {"Megosztás"}
                                                     </Text>
                                                 </Row>

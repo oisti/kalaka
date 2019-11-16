@@ -36,7 +36,7 @@ class EventsScreen extends React.Component<Props> {
             <Container>
                 <AppHeader
                     showBackButton={true}
-                    headerText={"Események"}
+                    searchBar={true}
                     leftButtonPress={this.onLeftButtonPress}
                 />
 

@@ -29,7 +29,7 @@ export default class RootComponent extends Component<any, State> {
     };
 
     if (!firebase.apps.length){
-			firebase.initializeApp(FirebaseKeys)		
+			firebase.initializeApp(FirebaseKeys);
 		}
   }
 
@@ -38,9 +38,7 @@ export default class RootComponent extends Component<any, State> {
   }
 
   componentDidMount(){
-    setTimeout(() =>{
-      registerForPushNotificationsAsync()
-    }, 500);
+    registerForPushNotificationsAsync();
   }
 
   async loadFonts() {

@@ -9,7 +9,7 @@ function postAnnouncement(req, res) {
     let expo = new Expo();
     
     let messages = [];
-    let somePushTokens = ["ExponentPushToken[ej8XOrC8V3L97YknDXM7yE]", "ExponentPushToken[ej8XOrC8V3L97YknDXM7yE]"];
+    let somePushTokens = ["ExponentPushToken[Dk6s4wJok7y1R7TwgdCZwm]","ExponentPushToken[fjso78CFfwXgthxTz9owEW]","ExponentPushToken[J-AICLJgKkrMouzT7TIP8C]","ExponentPushToken[J-AICLJgKkrMouzT7TIP8C]"];
     for (let pushToken of somePushTokens) {
         // Each push token looks like ExponentPushToken[xxxxxxxxxxxxxxxxxxxxxx]
       

@@ -8,6 +8,7 @@ import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import * as firebase from 'firebase';
 import { AppHeader } from "components";
+import markerImage from '../../assets/spot.png';
 
 interface Props {
     navigation: { navigate: (screen: string) => void };
@@ -23,17 +24,21 @@ class Map extends React.Component<Props> {
             loading: true,
             distance: null,
             initialRegion: null,
-            coordinates: []
+            coordinates: [],
+            events: [
+                {name:'The House Hackathon', time:'MOST TÖRTÉNIK', place: 'Magtár - Csíkszereda', going:'István és további 14 Hős ott lesz', latitude:46.3625103, longitude:25.7914388, picture:'https://scontent-otp1-1.xx.fbcdn.net/v/t1.0-9/74441083_986849398320396_3747914902031826944_o.jpg?_nc_cat=109&_nc_oc=AQnQH7Rzh-zv_6vlwtPDHnT3gPN0zhxJH-MgLpPFIu3lw4nHhwiwsfkDF7yFbaltb84&_nc_ht=scontent-otp1-1.xx&oh=3b07a8cb16a09991f38147db3725be0f&oe=5E4B3DD9'},
+                {name:'Edvin Marton: The Rock Symphony - Sepsi Aréna', time:'NOV 30', place: 'Sepsi Aréna', going:'21 Hős ott lesz', latitude:45.8778702, longitude:25.7994279, picture:'https://scontent-otp1-1.xx.fbcdn.net/v/t1.0-9/72487308_1431669476983637_4315064826662486016_o.jpg?_nc_cat=106&_nc_oc=AQnsvuICcRwB_5Nuv2VEJZfkmJnhHX3dZWIs7y7-i4Wg-77OVZPT6gu5JvhpsrQV4Mo&_nc_ht=scontent-otp1-1.xx&oh=4b85b980ad04d8b180af60ea09cdc66b&oe=5E43E090'}
+            ]
         }
     }
 
     componentDidMount() {
         this.getCurrentLoc();
-        const dbRefObject = firebase.database().ref().child('map');
-        dbRefObject.on('value', snap => {
-            const result = Object.values(snap.val());
-            this.setState({coordinates: result});
-        });
+        // const dbRefObject = firebase.database().ref().child('map');
+        // dbRefObject.on('value', snap => {
+        //     const result = Object.values(snap.val());
+        //     this.setState({coordinates: result});
+        // });
     }
 
     getCurrentLoc = async () => {
@@ -42,9 +47,7 @@ class Map extends React.Component<Props> {
             if (Location.hasServicesEnabledAsync()) {
                 Location.getCurrentPositionAsync({}).then(location=>{
                     this.setState({initialRegion:{latitude: location.coords.latitude, longitude: location.coords.longitude}})
-
                 }).catch(err => {
-                    console.log(err)
                     this.setState({initialRegion:{latitude: 46.2916805, longitude: 25.2881355}})
                 })
             }
@@ -86,7 +89,7 @@ class Map extends React.Component<Props> {
                     }
 
                     {this.state.initialRegion && 
-                        <MapView style={ this.state.showProducer ? styles.mapStyle2 : styles.mapStyle }
+                        <MapView style={ this.state.showProducer ? styles.mapStyle2 : styles.mapStyle } 
                             onPress={(e) => this.mapClick(e)}
                             initialRegion={{
                                 latitude: this.state.initialRegion.latitude,
@@ -96,12 +99,13 @@ class Map extends React.Component<Props> {
                             }}
                             provider={MapView.PROVIDER_GOOGLE}
                         >
-                            {this.state.coordinates.map((coordinate, i) => (
+                            {this.state.events.map((event, i) => (
                                 <Marker
                                     identifier={i.toString()}
                                     key={i}
                                     onPress={() => this.markerClick(i)}
-                                    coordinate={{latitude: coordinate.latitude, longitude: coordinate.longitude}}
+                                    coordinate={{latitude: event.latitude, longitude: event.longitude}}
+                                    image={markerImage}
                                 />
                             ))}
                         </MapView>

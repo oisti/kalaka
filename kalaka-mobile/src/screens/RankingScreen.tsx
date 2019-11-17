@@ -24,15 +24,15 @@ class RankingScreen extends React.Component<Props> {
   render(): JSX.Element {
     const heroes = [
       { name: 'Oláh István', points: '1', picture: 'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-8/s960x960/331655_10151309602704045_2142074936_o.jpg?_nc_cat=110&_nc_oc=AQn6NcQ3LTbF7v4tsNJPMfR6-ZFJow8QRWFDWlh1K9tlJ-eHvGHVqnKIuicPKLMhUVE&_nc_ht=scontent-otp1-1.xx&oh=cdd8531082a1977248e11f0006ea84a8&oe=5E453D52' },
-      { name: 'Oláh István', points: '2', picture: 'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-8/s960x960/331655_10151309602704045_2142074936_o.jpg?_nc_cat=110&_nc_oc=AQn6NcQ3LTbF7v4tsNJPMfR6-ZFJow8QRWFDWlh1K9tlJ-eHvGHVqnKIuicPKLMhUVE&_nc_ht=scontent-otp1-1.xx&oh=cdd8531082a1977248e11f0006ea84a8&oe=5E453D52' },
-      { name: 'Oláh István', points: '3', picture: 'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-8/s960x960/331655_10151309602704045_2142074936_o.jpg?_nc_cat=110&_nc_oc=AQn6NcQ3LTbF7v4tsNJPMfR6-ZFJow8QRWFDWlh1K9tlJ-eHvGHVqnKIuicPKLMhUVE&_nc_ht=scontent-otp1-1.xx&oh=cdd8531082a1977248e11f0006ea84a8&oe=5E453D52' },
-      { name: 'Oláh István', points: '4', picture: 'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-8/s960x960/331655_10151309602704045_2142074936_o.jpg?_nc_cat=110&_nc_oc=AQn6NcQ3LTbF7v4tsNJPMfR6-ZFJow8QRWFDWlh1K9tlJ-eHvGHVqnKIuicPKLMhUVE&_nc_ht=scontent-otp1-1.xx&oh=cdd8531082a1977248e11f0006ea84a8&oe=5E453D52' },
-      { name: 'Oláh István', points: '5', picture: 'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-8/s960x960/331655_10151309602704045_2142074936_o.jpg?_nc_cat=110&_nc_oc=AQn6NcQ3LTbF7v4tsNJPMfR6-ZFJow8QRWFDWlh1K9tlJ-eHvGHVqnKIuicPKLMhUVE&_nc_ht=scontent-otp1-1.xx&oh=cdd8531082a1977248e11f0006ea84a8&oe=5E453D52' },
-      { name: 'Oláh István', points: '6', picture: 'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-8/s960x960/331655_10151309602704045_2142074936_o.jpg?_nc_cat=110&_nc_oc=AQn6NcQ3LTbF7v4tsNJPMfR6-ZFJow8QRWFDWlh1K9tlJ-eHvGHVqnKIuicPKLMhUVE&_nc_ht=scontent-otp1-1.xx&oh=cdd8531082a1977248e11f0006ea84a8&oe=5E453D52' },
-      { name: 'Oláh István', points: '7', picture: 'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-8/s960x960/331655_10151309602704045_2142074936_o.jpg?_nc_cat=110&_nc_oc=AQn6NcQ3LTbF7v4tsNJPMfR6-ZFJow8QRWFDWlh1K9tlJ-eHvGHVqnKIuicPKLMhUVE&_nc_ht=scontent-otp1-1.xx&oh=cdd8531082a1977248e11f0006ea84a8&oe=5E453D52' },
-      { name: 'Oláh István', points: '8', picture: 'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-8/s960x960/331655_10151309602704045_2142074936_o.jpg?_nc_cat=110&_nc_oc=AQn6NcQ3LTbF7v4tsNJPMfR6-ZFJow8QRWFDWlh1K9tlJ-eHvGHVqnKIuicPKLMhUVE&_nc_ht=scontent-otp1-1.xx&oh=cdd8531082a1977248e11f0006ea84a8&oe=5E453D52' },
-      { name: 'Oláh István', points: '9', picture: 'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-8/s960x960/331655_10151309602704045_2142074936_o.jpg?_nc_cat=110&_nc_oc=AQn6NcQ3LTbF7v4tsNJPMfR6-ZFJow8QRWFDWlh1K9tlJ-eHvGHVqnKIuicPKLMhUVE&_nc_ht=scontent-otp1-1.xx&oh=cdd8531082a1977248e11f0006ea84a8&oe=5E453D52' },
-
+      {name:'Zobor Emőke', points:'250', picture:'https://icon-library.net/images/avatar-icon-png/avatar-icon-png-10.jpg'},
+      {name:'Sípos Albert', points:'246', picture:'https://img.pngio.com/avatar-user-computer-icons-software-deve-254409-png-images-pngio-avatarpng-900_540.png'},
+      {name:'Bodnár Zalán', points:'242', picture:'https://mpng.pngfly.com/20180523/tha/kisspng-businessperson-computer-icons-avatar-clip-art-lattice-5b0508dc6a3a10.0013931115270566044351.jpg'},
+      {name:'Lakatos Éva', points:'238', picture:'https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png'},
+      {name:'Fehér Dominik', points:'237', picture:'https://cdn.imgbin.com/24/16/4/imgbin-avatar-icon-fashion-men-avatar-man-illustration-yrsijCsUZh6ini7fz4sSSGFL0.jpg'},
+      {name:'Barna Patrik', points:'230', picture:'https://banner2.cleanpng.com/20180920/yko/kisspng-computer-icons-portable-network-graphics-avatar-ic-5ba3c66df14d32.3051789815374598219884.jpg'},
+      {name:'Máté Benedek', points:'226', picture:'https://img2.freepng.es/20180319/pde/kisspng-computer-icons-icon-design-avatar-flat-face-icon-5ab06e33bee962.122118601521511987782.jpg'},
+      {name:'Molnár Zsombor', points:'222', picture:'https://asia.ifoam.bio/wp-content/uploads/2018/12/avatar__181424.png'},
+      {name:'Soós Antal', points:'150', picture:'https://papierknippen.nl/wp-content/uploads/2017/03/photo.png'},
     ]
     return (
       <Container>

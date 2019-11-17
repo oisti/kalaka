@@ -23,9 +23,9 @@ class RankingScreen extends React.Component<Props> {
 
   render(): JSX.Element {
     const heroes = [
-      {name:'Miklós Imre', points:'23255', picture:'https://scontent-otp1-1.xx.fbcdn.net/v/t1.0-1/c0.0.960.960a/p960x960/54514937_2193388594055219_4808598221565722624_o.jpg?_nc_cat=101&_nc_oc=AQm72hM9En1me0AM0l6wdsjWsQW6XF7_6eNRnuAnbT45u5El_AEAX2nOH-BPSzhEK0c&_nc_ht=scontent-otp1-1.xx&oh=c7564b0c8259af594fd9db78f81abd84&oe=5E553480'},
-      {name:'Oláh István', points:'12863', picture:'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-8/s960x960/331655_10151309602704045_2142074936_o.jpg?_nc_cat=110&_nc_oc=AQn6NcQ3LTbF7v4tsNJPMfR6-ZFJow8QRWFDWlh1K9tlJ-eHvGHVqnKIuicPKLMhUVE&_nc_ht=scontent-otp1-1.xx&oh=cdd8531082a1977248e11f0006ea84a8&oe=5E453D52'},
-      {name:'Zobor Emőke', points:'5842', picture:'https://scontent-otp1-1.xx.fbcdn.net/v/t1.0-1/c0.0.160.160a/p160x160/49239312_2107929095920181_3295575741055369216_n.jpg?_nc_cat=100&_nc_oc=AQnmE1uxLRP5G0Dz4prPsAzO0Fb9NFEr0D2uRDGOrQvZ2WXHxdfjnS8T3IDH-7as2n8&_nc_ht=scontent-otp1-1.xx&oh=cde7beb54ef3a7ccd1d18f0e171d30fe&oe=5E5A5F64'},
+      {name:'Miklós Imre', points:'23,255', picture:'https://scontent-otp1-1.xx.fbcdn.net/v/t1.0-1/c0.0.960.960a/p960x960/54514937_2193388594055219_4808598221565722624_o.jpg?_nc_cat=101&_nc_oc=AQm72hM9En1me0AM0l6wdsjWsQW6XF7_6eNRnuAnbT45u5El_AEAX2nOH-BPSzhEK0c&_nc_ht=scontent-otp1-1.xx&oh=c7564b0c8259af594fd9db78f81abd84&oe=5E553480'},
+      {name:'Oláh István', points:'12,863', picture:'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-8/s960x960/331655_10151309602704045_2142074936_o.jpg?_nc_cat=110&_nc_oc=AQn6NcQ3LTbF7v4tsNJPMfR6-ZFJow8QRWFDWlh1K9tlJ-eHvGHVqnKIuicPKLMhUVE&_nc_ht=scontent-otp1-1.xx&oh=cdd8531082a1977248e11f0006ea84a8&oe=5E453D52'},
+      {name:'Zobor Emőke', points:'5,842', picture:'https://scontent-otp1-1.xx.fbcdn.net/v/t1.0-1/c0.0.160.160a/p160x160/49239312_2107929095920181_3295575741055369216_n.jpg?_nc_cat=100&_nc_oc=AQnmE1uxLRP5G0Dz4prPsAzO0Fb9NFEr0D2uRDGOrQvZ2WXHxdfjnS8T3IDH-7as2n8&_nc_ht=scontent-otp1-1.xx&oh=cde7beb54ef3a7ccd1d18f0e171d30fe&oe=5E5A5F64'},
       {name:'Sípos Albert', points:'985', picture:'https://scontent-otp1-1.xx.fbcdn.net/v/t1.0-9/10599553_586643431439554_1351395491206439448_n.jpg?_nc_cat=111&_nc_oc=AQmJT-OKmJtt5qlsh1iWmsuZ_7W3cNLriY4eYGUfe6alHA-bAhqPsFsBgVaFy26eqRc&_nc_ht=scontent-otp1-1.xx&oh=15389c734613bdbb948c542d5aedaed3&oe=5E485FC5'},
       {name:'Bodnár Zalán', points:'854', picture:'https://scontent-otp1-1.xx.fbcdn.net/v/t1.0-1/c0.0.160.160a/p160x160/57161037_331426277573504_5042907357785358336_o.jpg?_nc_cat=101&_nc_oc=AQm_lXGwzJMIq38upEZ2vCMwwaAF03qOFi6Em_mI4CrpMR5FGxI9U2go3g-ErGr6PO4&_nc_ht=scontent-otp1-1.xx&oh=33d2d9ee3daa95a0aa84e249ec7dc547&oe=5E514127'},
       {name:'Lakatos Éva', points:'655', picture:'https://scontent-otp1-1.xx.fbcdn.net/v/t1.0-1/c6.0.160.160a/p160x160/20952926_1355894534529911_153644086909908440_n.jpg?_nc_cat=109&_nc_oc=AQnEu8huojI8_3zM6L0PvLsjusoudLNQ9L7TmGVru45yB2gxsgLEa-TwU6hdtisYDBY&_nc_ht=scontent-otp1-1.xx&oh=ef772dfb4934bdfce8a353d46cd8e724&oe=5E876F34'},
@@ -36,7 +36,8 @@ class RankingScreen extends React.Component<Props> {
       {name:'Soós Antal', points:'150', picture:'https://scontent-otp1-1.xx.fbcdn.net/v/t1.0-9/40790348_1960386010690274_2455897969556193280_o.jpg?_nc_cat=110&_nc_oc=AQnkQLye1ThXdJotFZXFhOviXpYNTONnxE6gF_TUtJ1Nc9pINVUEHtTPMCev4v1mNJU&_nc_ht=scontent-otp1-1.xx&oh=021c230fa54b93e53c3c2ad551eab155&oe=5E8B58E1'},
       {name:'Barna Edina', points:'125', picture:'https://scontent-otp1-1.xx.fbcdn.net/v/t1.0-1/p160x160/69073086_2291729571157893_4781973118002397184_n.jpg?_nc_cat=104&_nc_oc=AQlMcoi2DayUPgSzHX3Y9nOukJWEHEglcqFD_usTspbqzlUOLadcEPihXk9WV_-ZM5s&_nc_ht=scontent-otp1-1.xx&oh=d6f7ff0ca854d5c05b3ebde4f2e89395&oe=5E482A05'},
       {name:'Pataki Bernadett', points:'100', picture:'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-1/p160x160/24302092_1441968032518432_7643482720446761190_o.jpg?_nc_cat=109&_nc_oc=AQnJ6YdbQfcxfn3O3aNOTAFkHxvWMwdHrTV1cwT-GgkOT17nJ04PkdvwK2xbEaQZX9c&_nc_ht=scontent-otp1-1.xx&oh=d4944c35543cd30bc478f30f0783a7cd&oe=5E889C6E'},
-      {name:'Novák Izabella', points:'85', picture:'https://scontent-otp1-1.xx.fbcdn.net/v/t1.0-1/p160x160/72292231_2535186403236862_4192207746721906688_n.jpg?_nc_cat=107&_nc_oc=AQk3rHSclh32LQOAXM9XR3k0gTqYBo9HeCzgsaYrYmLgyqS8jEADovyegVTGy9E3Wl8&_nc_ht=scontent-otp1-1.xx&oh=78a7de8039ed9ac1d18f0eca82affa99&oe=5E8761F9'},
+      {name:'Novák Izabella', points:'85', picture:'https://scontent-otp1-1.xx.fbcdn.net/v/t1.0-1/p160x160/72292231_2535186403236862_4192207746721906688_n.jpg?_nc_cat=107&_nc_oc=AQk3rHSclh32LQOAXM9XR3k0gTqYBo9HeCzgsaYrYmLgyqS8jEADovyegVTGy9E3Wl8&_nc_ht=scontent-otp1-1.xx&oh=78a7de8039ed9ac1d18f0eca82affa99&oe=5E8761F9'},    
+    
     ]
     return (
       <Container>
@@ -51,7 +52,7 @@ class RankingScreen extends React.Component<Props> {
           <Grid>
             <Row>
               <Col>
-                <Row style={{  borderRadius: 2,
+                <Row style={{  borderRadius: 4,
                                     borderColor: '#ddd',
                                     borderBottomWidth: 0,
                                     shadowColor: '#000',
@@ -59,25 +60,23 @@ class RankingScreen extends React.Component<Props> {
                                     shadowOpacity: 0.8,
                                     shadowRadius: 2,
                                     elevation: 2,
-                                    marginLeft: 5,
-                                    marginRight: 5,
-                                    borderTopLeftRadius: 5,
-                                    borderTopRightRadius: 5,
+                                    marginLeft: 8,
+                                    marginRight: 8,
                                     overflow: "hidden",
-                                    marginTop: 10 }}>
+                                    marginTop: 8 }}>
                   <Col>
                     <Row alignItems="center" justifyContent="center">
-                      <Text style={{ fontSize: 16, color: "#b21773", margin: 8 }}>
+                      <Text style={{ fontSize: 22, color: "#666666", margin: 8 }}>
                         {"1"}
                       </Text>
                     </Row>
                     <Row alignItems="center" justifyContent="center">
                       <Thumbnail
-                        style={{ width: 70, height: 70, borderRadius: 70 / 2 }}
+                        style={{ width: 100, height: 100, borderRadius: 100 / 2 }}
                         source={{ uri: heroes[0].picture }} />
                     </Row>
                     <Row alignItems="center" justifyContent="center">
-                      <Text style={{ fontSize: 14, color: "#b21773" }}>
+                      <Text style={{ fontSize: 20, color: "#666666" }}>
                         {heroes[0].name}
                       </Text>
                     </Row>
@@ -89,12 +88,12 @@ class RankingScreen extends React.Component<Props> {
                     <Row>
                       <Col alignItems="center" justifyContent="center">
                         <TouchableOpacity>
-                          <FontAwesome name="heartbeat" size={15} style={{ margin: 16 }}  color="#696969"/>
+                          <FontAwesome name="heartbeat" size={15} style={{ margin: 8 }}  color="#696969"/>
                         </TouchableOpacity>
                       </Col>
                       <Col alignItems="center" justifyContent="center">
                         <TouchableOpacity>
-                          <AntDesign name="message1" size={15} style={{ margin: 16 }}  color="#696969"/>
+                          <AntDesign name="message1" size={15} style={{ margin: 8 }}  color="#696969"/>
                         </TouchableOpacity>
                       </Col>
                     </Row>
@@ -102,7 +101,7 @@ class RankingScreen extends React.Component<Props> {
                 </Row>
               </Col>
               <Col>
-                <Row style={{  borderRadius: 2,
+                <Row style={{  borderRadius: 4,
                                     borderColor: '#ddd',
                                     borderBottomWidth: 0,
                                     shadowColor: '#000',
@@ -110,28 +109,27 @@ class RankingScreen extends React.Component<Props> {
                                     shadowOpacity: 0.8,
                                     shadowRadius: 2,
                                     elevation: 2,
-                                    marginLeft: 5,
-                                    marginRight: 5,
-                                    borderTopLeftRadius: 5,
-                                    borderTopRightRadius: 5,
+                                    marginLeft: 8,
+                                    marginRight: 8,
+                                    padding: 8,
                                     overflow: "hidden",
                                     marginTop: 10 }}>
                   <Col size={2}>
-                    <Row alignItems="center" justifyContent="center">
-                      <Text style={{ fontSize: 16, color: "#b21773", margin: 8 }}>
+                    <Row>
+                      <Text style={{ fontSize: 16, color: "#666666", margin: 8 }}>
                         {"2"}
                       </Text>
                       <Thumbnail
                         style={{ width: 40, height: 40, borderRadius: 40 / 2 }}
                         source={{ uri: heroes[1].picture }} />
                     </Row>
-                    <Row alignItems="center" justifyContent="center">
-                      <Text style={{ fontSize: 12, color: "#b21773" }}>
+                    <Row>
+                      <Text style={{ fontSize: 16, color: "#666666", marginLeft: 8 }}>
                         {heroes[1].name}
                       </Text>
                     </Row>
-                    <Row alignItems="center" justifyContent="center">
-                      <Text style={{ fontSize: 12, color: "#696969" }}>
+                    <Row>
+                      <Text style={{ fontSize: 12, color: "#696969", marginLeft: 8 }}>
                         {heroes[1].points}
                       </Text>
                     </Row>
@@ -139,7 +137,7 @@ class RankingScreen extends React.Component<Props> {
                   <Col size={1}>
                     <Row alignItems="center" justifyContent="center">
                       <TouchableOpacity>
-                        <FontAwesome name="heartbeat" size={15} style={{ margin: 16 }} color="#696969" />
+                        <FontAwesome name="heartbeat" size={15} style={{ margin: 8 }} color="#696969" />
                       </TouchableOpacity>
                     </Row>
                     <Row alignItems="center" justifyContent="center">
@@ -149,7 +147,7 @@ class RankingScreen extends React.Component<Props> {
                     </Row>
                   </Col>
                 </Row>
-                <Row style={{  borderRadius: 2,
+                <Row style={{  borderRadius: 4,
                                     borderColor: '#ddd',
                                     borderBottomWidth: 0,
                                     shadowColor: '#000',
@@ -157,28 +155,27 @@ class RankingScreen extends React.Component<Props> {
                                     shadowOpacity: 0.8,
                                     shadowRadius: 2,
                                     elevation: 2,
-                                    marginLeft: 5,
-                                    marginRight: 5,
-                                    borderTopLeftRadius: 5,
-                                    borderTopRightRadius: 5,
+                                    marginLeft: 8,
+                                    marginRight: 8,
                                     overflow: "hidden",
+                                    padding: 8,
                                     marginTop: 10 }}>
                   <Col size={2}>
-                    <Row alignItems="center" justifyContent="center">
-                      <Text style={{ fontSize: 16, color: "#b21773", margin: 8 }}>
+                    <Row>
+                      <Text style={{ fontSize: 16, color: "#666666", margin: 8 }}>
                         {"3"}
                       </Text>
                       <Thumbnail
                         style={{ width: 40, height: 40, borderRadius: 40 / 2 }}
                         source={{ uri: heroes[2].picture }} />
                     </Row>
-                    <Row alignItems="center" justifyContent="center">
-                      <Text style={{ fontSize: 12, color: "#b21773" }}>
+                    <Row>
+                      <Text style={{ fontSize: 14, color: "#666666", marginLeft: 8 }}>
                         {heroes[2].name}
                       </Text>
                     </Row>
-                    <Row alignItems="center" justifyContent="center">
-                      <Text style={{ fontSize: 12, color: "#696969" }}>
+                    <Row>
+                      <Text style={{ fontSize: 12, color: "#696969", marginLeft: 8 }}>
                         {heroes[2].points}
                       </Text>
                     </Row>
@@ -186,7 +183,7 @@ class RankingScreen extends React.Component<Props> {
                   <Col size={1}>
                     <Row alignItems="center" justifyContent="center">
                       <TouchableOpacity>
-                        <FontAwesome name="heartbeat" size={15} style={{ margin: 16 }} color="#696969" />
+                        <FontAwesome name="heartbeat" size={15} style={{ margin: 8 }} color="#696969" />
                       </TouchableOpacity>
                     </Row>
                     <Row alignItems="center" justifyContent="center">
@@ -200,7 +197,7 @@ class RankingScreen extends React.Component<Props> {
             </Row>
             {heroes.map((item, index) => {
               if(index > 2) { return (
-                <Row key={index} style={{  borderRadius: 2,
+                <Row key={index} style={{  borderRadius: 4,
                                     borderColor: '#ddd',
                                     borderBottomWidth: 0,
                                     shadowColor: '#000',
@@ -208,23 +205,22 @@ class RankingScreen extends React.Component<Props> {
                                     shadowOpacity: 0.8,
                                     shadowRadius: 2,
                                     elevation: 2,
-                                    marginLeft: 5,
-                                    marginRight: 5,
-                                    borderTopLeftRadius: 5,
-                                    borderTopRightRadius: 5,
+                                    marginLeft: 8,
+                                    marginRight: 8,
                                     overflow: "hidden",
-                                    marginTop: 10 }}>
+                                    padding: 8,
+                                    marginTop: 16 }}>
                   <Col>
                       <Row>
                         <Col size={1} alignItems="center" justifyContent="center">
-                          <Text style={{ fontSize: 16, color: "#b21773", margin: 8 }}>
+                          <Text style={{ fontSize: 18, color: "#666666" }}>
                             {index + 1}
                           </Text>
                         </Col>
                         <Col size={1}>
                           <Row>
                             <Col alignItems="center" justifyContent="center">
-                              <Row style={{ padding: 4 }} alignItems="center" justifyContent="center">
+                              <Row style={{ paddingRight: 4 }} alignItems="center" justifyContent="center">
                                 <Thumbnail
                                   style={{ width: 40, height: 40, borderRadius: 40 / 2 }}
                                   source={{ uri: item.picture }} />
@@ -253,7 +249,7 @@ class RankingScreen extends React.Component<Props> {
                         <Col size={1}>
                           <Row alignItems="center" justifyContent="center">
                             <TouchableOpacity>
-                              <FontAwesome name="heartbeat" size={15} style={{ margin: 16 }} color="#696969" />
+                              <FontAwesome name="heartbeat" size={15} style={{ margin: 4 }} color="#696969" />
                             </TouchableOpacity>
                           </Row>
                         </Col>

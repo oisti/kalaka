@@ -137,7 +137,7 @@ class Map extends React.Component<Props> {
                                     </Text>
                                 </Row>
                                 <Row>
-                                    <Text style={{ paddingLeft: 8, color: "black", fontWeight: "bold", fontSize: 11 }}>
+                                    <Text style={{ paddingLeft: 8, color: "black", fontWeight: "bold", fontSize: 16 }}>
                                         {item.name}
                                     </Text>
                                 </Row>
@@ -194,7 +194,7 @@ class Map extends React.Component<Props> {
                                 <TouchableOpacity>
                                     <Row alignItems="center" justifyContent="center">  
                                     <Ionicons name="ios-star-outline" size={20} color="#666666" />
-                                    <Text style={{fontSize: 9, color: "#666666", marginLeft: 4}}>
+                                    <Text style={{fontSize: 12, color: "#666666", marginLeft: 4}}>
                                         {"Érdekel"}
                                     </Text>
                                     </Row>
@@ -204,7 +204,7 @@ class Map extends React.Component<Props> {
                                 <TouchableOpacity>
                                 <Row alignItems="center" justifyContent="center">  
                                     <AntDesign name="sharealt" size={20} color="#666666" />
-                                    <Text style={{fontSize: 9, color: "#666666", marginLeft: 4}}>
+                                    <Text style={{fontSize: 12, color: "#666666", marginLeft: 4}}>
                                         {"Megosztás"}
                                     </Text>
                                 </Row>
@@ -279,7 +279,7 @@ const styles = StyleSheet.create({
     },
     mapStyle2: {
         width: Dimensions.get('window').width,
-        height: Dimensions.get('window').height-393,
+        height: Dimensions.get('window').height-420,
     },
     image: {
         width: "100%",

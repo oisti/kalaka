@@ -44,15 +44,15 @@ const Main = createBottomTabNavigator(
 		  switch (routeName) {
 			case 'Közösség': 
 			  	return (
-					<MaterialCommunityIcons name="heart-pulse" size={25} color="#B21773"/>
+					<MaterialCommunityIcons name="heart-pulse" size={25} color="#666666"/>
 				);
 			case "Események":
 				return (
-					<MaterialIcons name="event" size={25} color="#B21773"/>
+					<MaterialIcons name="event" size={25} color="#666666"/>
 				);
 			  case "Vitézek":
 				  return (
-					  <Ionicons name="ios-medal" size={25} color="#B21773" />
+					  <Ionicons name="ios-medal" size={25} color="#666666" />
 				  );	
 			default: 
 				return (
@@ -62,8 +62,9 @@ const Main = createBottomTabNavigator(
 		},
 	  }),
 	  tabBarOptions: {
-		activeTintColor: '#B21773',
-		inactiveTintColor: '#263238',
+		activeTintColor: '#666666',
+		activeBackgroundColor: '#f5f5f5',
+		inactiveTintColor: '#939393',
 	  },
 	}
   )

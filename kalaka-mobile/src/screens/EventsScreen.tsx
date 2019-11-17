@@ -24,14 +24,26 @@ class EventsScreen extends React.Component<Props> {
 
     render(): JSX.Element {
         const list = [
-            { name: "First Name" },
-            { name: "Second Name" },
-            { name: "First Name" },
-            { name: "Second Name" },
-            { name: "First Name" },
-            { name: "Second Name" },
-            { name: "First Name" },
-            { name: "Second Name" }];
+                {name:'The House Hackathon', 
+                time:'MOST TÖRTÉNIK', 
+                place: 'Magtár - Csíkszereda', 
+                going:'István és további 14 Hős ott lesz', 
+                latitude:46.3625103, 
+                longitude:25.7914388, 
+                picture:'https://scontent-otp1-1.xx.fbcdn.net/v/t1.0-9/74441083_986849398320396_3747914902031826944_o.jpg?_nc_cat=109&_nc_oc=AQnQH7Rzh-zv_6vlwtPDHnT3gPN0zhxJH-MgLpPFIu3lw4nHhwiwsfkDF7yFbaltb84&_nc_ht=scontent-otp1-1.xx&oh=3b07a8cb16a09991f38147db3725be0f&oe=5E4B3DD9'},
+            { 
+                time: "MOST TÖRTÉNIK", 
+                name: "First Name",
+                picture: 'https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/3/2016/12/16131147/future-phone-mobile-live-events-technology-trends.png',
+                place: 'Magtár - Csíkszereda'
+            },
+            { 
+                time: "Holnap",        
+                name: "Second Name",
+                picture: 'https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/2017/12/22223742/Events-1200x630.jpg',
+                place: 'Magtár - Csíkszereda'
+            },
+        ];
         return (
             <Container>
                 <AppHeader
@@ -64,24 +76,22 @@ class EventsScreen extends React.Component<Props> {
                                     <Col>
                                         <Row>
                                             <Image
-                                                style={{ width: "100%", height: 120 }}
-                                                source={{ uri: index%2 
-                                                ? "https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/3/2016/12/16131147/future-phone-mobile-live-events-technology-trends.png" 
-                                                : "https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/2017/12/22223742/Events-1200x630.jpg" }} />
+                                                style={{ width: "100%", height: 150 }}
+                                                source={{ uri: item.picture }} />
                                         </Row>
                                         <Row>
                                             <Text style={{ paddingLeft: 8, paddingTop: 8, fontSize: 11, color: "#f73D10" }}>
-                                                {"MOST TÖRTÉNIK"}
+                                                 {item.time}
                                             </Text>
                                         </Row>
                                         <Row>
                                             <Text style={{ paddingLeft: 8, color: "black", fontWeight: "bold", fontSize: 11 }}>
-                                                {"The House Hackathon"}
+                                                {item.name}
                                             </Text>
                                         </Row>
                                         <Row>
                                             <Text style={{ paddingLeft: 8, fontSize: 10, color: "#666666" }}>
-                                                {"Magtár - Csíkszereda"}
+                                                {item.place}
                                             </Text>
                                         </Row>
                                         <Row style={{paddingLeft: 8, paddingTop: 4, flexDirection: "row"}}>
@@ -89,7 +99,7 @@ class EventsScreen extends React.Component<Props> {
                                                 style={{ width: 15, height: 15 }}
                                                 source={{ uri: "https://png.pngtree.com/png-vector/20190321/ourmid/pngtree-vector-users-icon-png-image_856952.jpg"}} />
                                         <Text style={{fontSize:10, marginLeft: 3, color: "#666666" }}>
-                                            {"Ervin és további 14 Hős ott lesz"}
+                                            {item.going}
                                         </Text> 
                                         </Row>
                                         <Row style={{borderBottomColor: "#666666", borderBottomWidth: 1, margin: 8, marginBottom: 4}}></Row>

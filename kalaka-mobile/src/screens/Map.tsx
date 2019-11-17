@@ -9,6 +9,8 @@ import * as Permissions from 'expo-permissions';
 import * as firebase from 'firebase';
 import { AppHeader } from "components";
 import markerImage from '../../assets/spot.png';
+import { Ionicons, AntDesign } from "@expo/vector-icons";
+import { FontAwesome } from '@expo/vector-icons';
 
 interface Props {
     navigation: { navigate: (screen: string) => void };
@@ -51,7 +53,7 @@ class Map extends React.Component<Props> {
                 Location.getCurrentPositionAsync({}).then(location=>{
                     this.setState({initialRegion:{latitude: location.coords.latitude, longitude: location.coords.longitude}})
                 }).catch(err => {
-                    this.setState({initialRegion:{latitude: 46.2916805, longitude: 25.2881355}})
+                    this.setState({initialRegion:{latitude: 46.3625103, longitude: 25.7914388}})
                 })
             }
         } 
@@ -61,20 +63,154 @@ class Map extends React.Component<Props> {
 
     mapClick = (e) => {
         const index = parseInt(e.nativeEvent.id, 10);
-        const map = firebase.database().ref().child('map');
-        map.child('kisJanosId').set(e.nativeEvent.coordinate);
+        //const map = firebase.database().ref().child('map');
+        //map.child('kisJanosId').set(e.nativeEvent.coordinate);
         //map.push(e.nativeEvent.coordinate);
         if ( isNaN(index)) {
-            //this.setState({showProducer: false});
+            this.setState({showProducer: false});
         } else {
-            //this.setState({showProducer: true, producer: this.state.producers[index]});
+            this.setState({showProducer: true, item: this.state.events[i]});
         }
     }
 
     markerClick = (i) => {
         if (Platform.OS == 'android') {
-            //this.setState({showProducer: true, producer: this.state.producers[i]});
+            this.setState({showProducer: true, item: this.state.events[i]});
         }
+    }
+
+    callNumber = phone => {
+        let phoneNumber = phone;
+        if (Platform.OS !== 'android') {
+            phoneNumber = `telprompt:${phone}`;
+        } else  {
+            phoneNumber = `tel:${phone}`;
+        }
+        Linking.canOpenURL(phoneNumber).then(supported => {
+            if (!supported) {
+                Alert.alert('Phone number is not available');
+            } else {
+                return Linking.openURL(phoneNumber);
+            }
+        }).catch(err => {
+            console.log(err)
+        });
+    }
+
+    wazeDirections = (latitude, longitude) => {
+        var link = 'https://www.waze.com/ul?ll=' + latitude + '%2C' + longitude + '&navigate=yes';
+        Linking.openURL(link);
+    }
+
+    eventCard = () => {
+        const {item} = this.state;
+        return (
+            <Row
+                style={{   borderWidth: 1,
+                    borderRadius: 2,
+                    borderColor: '#ddd',
+                   // borderBottomWidth: 0,
+                    shadowColor: '#000',
+                    shadowOffset: { width: 0, height: 2 },
+                    shadowOpacity: 0.8,
+                    shadowRadius: 2,
+                    elevation: 2,
+                    
+                    borderTopLeftRadius: 5,
+                    borderTopRightRadius: 5,
+                    overflow: "hidden",
+                     }}>
+                    <Col>
+                        <Row>
+                            <Image
+                                style={{ width: "100%", height: 150 }}
+                                source={{ uri: item.picture }} />
+                        </Row>
+                        <Row>
+                            <Col size={3}>
+                                <Row>
+                                    <Text style={{ paddingLeft: 8, paddingTop: 8, fontSize: 11, color: "#f73D10" }}>
+                                            {item.time}
+                                    </Text>
+                                </Row>
+                                <Row>
+                                    <Text style={{ paddingLeft: 8, color: "black", fontWeight: "bold", fontSize: 11 }}>
+                                        {item.name}
+                                    </Text>
+                                </Row>
+                                <Row>
+                                    <Text style={{ paddingLeft: 8, fontSize: 10, color: "#666666" }}>
+                                        {item.place}
+                                    </Text>
+                                </Row>
+                                <Row style={{paddingLeft: 8, paddingTop: 4, flexDirection: "row"}}>
+                                <Image
+                                        style={{ width: 15, height: 15 }}
+                                        source={{ uri: "https://png.pngtree.com/png-vector/20190321/ourmid/pngtree-vector-users-icon-png-image_856952.jpg"}} />
+                                <Text style={{fontSize:10, marginLeft: 3, color: "#666666" }}>
+                                    {item.going}
+                                </Text> 
+                                </Row>
+                            </Col>
+                            <Col justifyContent="center" size={1}>
+                                <Row justifyContent="center">
+                                    <TouchableOpacity onPress={()=>{this.callNumber("0743014338")}}>
+                                        <Row justifyContent="center" alignItems="flex-end">
+                                            <Card style={styles.actionCard}>
+                                                <Ionicons name='ios-call' style={styles.actionIcon}/>
+                                            </Card>
+                                        </Row>
+                                        <Row justifyContent="center">
+                                            <Text style={styles.actionText}>
+                                                    {"Hívás"}
+                                            </Text>
+                                        </Row>
+                                    </TouchableOpacity>
+                                </Row>
+                            </Col>
+                            <Col justifyContent="center" size={1}>
+                                <Row justifyContent="center">
+                                    <TouchableOpacity onPress={()=>{ this.wazeDirections(item.longitude, item.latitude) }}>
+                                        <Row justifyContent="center" alignItems="flex-end">
+                                            <Card style={styles.actionCard2}>
+                                                <FontAwesome name='map-marker' style={styles.actionIcon} />
+                                            </Card>
+                                        </Row>
+                                        <Row justifyContent="center">
+                                            <Text style={styles.actionText}>
+                                                    {"Vezetés"}
+                                            </Text>
+                                        </Row>
+                                    </TouchableOpacity>
+                                </Row>
+                            </Col>
+                        </Row>
+                        <Row style={{borderBottomColor: "#666666", borderBottomWidth: 1, margin: 8, marginBottom: 4}}></Row>
+                        <Row style={{ padding: 8, paddingTop: 0 }}>
+                            <Col alignItems="center" justifyContent="center">
+                                <TouchableOpacity>
+                                    <Row alignItems="center" justifyContent="center">  
+                                    <Ionicons name="ios-star-outline" size={20} color="#666666" />
+                                    <Text style={{fontSize: 9, color: "#666666", marginLeft: 4}}>
+                                        {"Érdekel"}
+                                    </Text>
+                                    </Row>
+                                </TouchableOpacity>
+                            </Col>
+                            <Col alignItems="center" justifyContent="center">
+                                <TouchableOpacity>
+                                <Row alignItems="center" justifyContent="center">  
+                                    <AntDesign name="sharealt" size={20} color="#666666" />
+                                    <Text style={{fontSize: 9, color: "#666666", marginLeft: 4}}>
+                                        {"Megosztás"}
+                                    </Text>
+                                </Row>
+                                </TouchableOpacity>
+                            </Col>
+                        </Row>
+                    </Col>
+                </Row>
+        )
     }
 
     render() : JSX.Element{
@@ -84,7 +220,7 @@ class Map extends React.Component<Props> {
                     showBackButton={false}
                     headerText={"Térkép"}
                 />
-                <Content padder enableOnAndroid>
+                <Content  enableOnAndroid>
                 <View style={styles.container}>
 
                     {(!this.state.initialRegion) &&
@@ -114,6 +250,7 @@ class Map extends React.Component<Props> {
                         </MapView>
                     }
                 </View> 
+                { this.state.showProducer && this.eventCard() }
                 </Content>
             </>
         );
@@ -139,7 +276,7 @@ const styles = StyleSheet.create({
     },
     mapStyle2: {
         width: Dimensions.get('window').width,
-        height: Dimensions.get('window').height-200,
+        height: Dimensions.get('window').height-390,
     },
     image: {
         width: "100%",
@@ -189,9 +326,10 @@ const styles = StyleSheet.create({
     },
     actionText:{
         color: "#ec407a",
+        fontSize: 11
     },
     actionIcon:{
-        fontSize: 20,
+        fontSize: 15,
         color: "#ec407a",
     },
     actionCard: {

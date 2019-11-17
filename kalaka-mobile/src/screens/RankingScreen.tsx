@@ -22,15 +22,18 @@ class RankingScreen extends React.Component<Props> {
   };
 
   render(): JSX.Element {
-    const list = [
-      { name: "First Name" },
-      { name: "Second Name" },
-      { name: "First Name" },
-      { name: "Second Name" },
-      { name: "First Name" },
-      { name: "Second Name" },
-      { name: "First Name" },
-      { name: "Second Name" }];
+    const heroes = [
+      { name: 'Oláh István', points: '1', picture: 'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-8/s960x960/331655_10151309602704045_2142074936_o.jpg?_nc_cat=110&_nc_oc=AQn6NcQ3LTbF7v4tsNJPMfR6-ZFJow8QRWFDWlh1K9tlJ-eHvGHVqnKIuicPKLMhUVE&_nc_ht=scontent-otp1-1.xx&oh=cdd8531082a1977248e11f0006ea84a8&oe=5E453D52' },
+      { name: 'Oláh István', points: '2', picture: 'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-8/s960x960/331655_10151309602704045_2142074936_o.jpg?_nc_cat=110&_nc_oc=AQn6NcQ3LTbF7v4tsNJPMfR6-ZFJow8QRWFDWlh1K9tlJ-eHvGHVqnKIuicPKLMhUVE&_nc_ht=scontent-otp1-1.xx&oh=cdd8531082a1977248e11f0006ea84a8&oe=5E453D52' },
+      { name: 'Oláh István', points: '3', picture: 'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-8/s960x960/331655_10151309602704045_2142074936_o.jpg?_nc_cat=110&_nc_oc=AQn6NcQ3LTbF7v4tsNJPMfR6-ZFJow8QRWFDWlh1K9tlJ-eHvGHVqnKIuicPKLMhUVE&_nc_ht=scontent-otp1-1.xx&oh=cdd8531082a1977248e11f0006ea84a8&oe=5E453D52' },
+      { name: 'Oláh István', points: '4', picture: 'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-8/s960x960/331655_10151309602704045_2142074936_o.jpg?_nc_cat=110&_nc_oc=AQn6NcQ3LTbF7v4tsNJPMfR6-ZFJow8QRWFDWlh1K9tlJ-eHvGHVqnKIuicPKLMhUVE&_nc_ht=scontent-otp1-1.xx&oh=cdd8531082a1977248e11f0006ea84a8&oe=5E453D52' },
+      { name: 'Oláh István', points: '5', picture: 'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-8/s960x960/331655_10151309602704045_2142074936_o.jpg?_nc_cat=110&_nc_oc=AQn6NcQ3LTbF7v4tsNJPMfR6-ZFJow8QRWFDWlh1K9tlJ-eHvGHVqnKIuicPKLMhUVE&_nc_ht=scontent-otp1-1.xx&oh=cdd8531082a1977248e11f0006ea84a8&oe=5E453D52' },
+      { name: 'Oláh István', points: '6', picture: 'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-8/s960x960/331655_10151309602704045_2142074936_o.jpg?_nc_cat=110&_nc_oc=AQn6NcQ3LTbF7v4tsNJPMfR6-ZFJow8QRWFDWlh1K9tlJ-eHvGHVqnKIuicPKLMhUVE&_nc_ht=scontent-otp1-1.xx&oh=cdd8531082a1977248e11f0006ea84a8&oe=5E453D52' },
+      { name: 'Oláh István', points: '7', picture: 'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-8/s960x960/331655_10151309602704045_2142074936_o.jpg?_nc_cat=110&_nc_oc=AQn6NcQ3LTbF7v4tsNJPMfR6-ZFJow8QRWFDWlh1K9tlJ-eHvGHVqnKIuicPKLMhUVE&_nc_ht=scontent-otp1-1.xx&oh=cdd8531082a1977248e11f0006ea84a8&oe=5E453D52' },
+      { name: 'Oláh István', points: '8', picture: 'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-8/s960x960/331655_10151309602704045_2142074936_o.jpg?_nc_cat=110&_nc_oc=AQn6NcQ3LTbF7v4tsNJPMfR6-ZFJow8QRWFDWlh1K9tlJ-eHvGHVqnKIuicPKLMhUVE&_nc_ht=scontent-otp1-1.xx&oh=cdd8531082a1977248e11f0006ea84a8&oe=5E453D52' },
+      { name: 'Oláh István', points: '9', picture: 'https://scontent-otp1-1.xx.fbcdn.net/v/t31.0-8/s960x960/331655_10151309602704045_2142074936_o.jpg?_nc_cat=110&_nc_oc=AQn6NcQ3LTbF7v4tsNJPMfR6-ZFJow8QRWFDWlh1K9tlJ-eHvGHVqnKIuicPKLMhUVE&_nc_ht=scontent-otp1-1.xx&oh=cdd8531082a1977248e11f0006ea84a8&oe=5E453D52' },
+
+    ]
     return (
       <Container>
         <AppHeader
@@ -67,16 +70,16 @@ class RankingScreen extends React.Component<Props> {
                     <Row alignItems="center" justifyContent="center">
                       <Thumbnail
                         style={{ width: 70, height: 70, borderRadius: 70 / 2 }}
-                        source={{ uri: "https://banner2.cleanpng.com/20180920/yko/kisspng-computer-icons-portable-network-graphics-avatar-ic-5ba3c66df14d32.3051789815374598219884.jpg" }} />
+                        source={{ uri: heroes[0].picture }} />
                     </Row>
                     <Row alignItems="center" justifyContent="center">
                       <Text style={{ fontSize: 14, color: "#b21773" }}>
-                        {"Felhasználó Neve"}
+                        {heroes[0].name}
                       </Text>
                     </Row>
                     <Row alignItems="center" justifyContent="center">
                       <Text style={{ fontSize: 12, color: "#696969" }}>
-                        {"123456"}
+                        {heroes[0].points}
                       </Text>
                     </Row>
                     <Row>
@@ -116,16 +119,16 @@ class RankingScreen extends React.Component<Props> {
                       </Text>
                       <Thumbnail
                         style={{ width: 40, height: 40, borderRadius: 40 / 2 }}
-                        source={{ uri: "https://banner2.cleanpng.com/20180920/yko/kisspng-computer-icons-portable-network-graphics-avatar-ic-5ba3c66df14d32.3051789815374598219884.jpg" }} />
+                        source={{ uri: heroes[1].picture }} />
                     </Row>
                     <Row alignItems="center" justifyContent="center">
                       <Text style={{ fontSize: 12, color: "#b21773" }}>
-                        {"Felhasználó Neve"}
+                        {heroes[1].name}
                       </Text>
                     </Row>
                     <Row alignItems="center" justifyContent="center">
                       <Text style={{ fontSize: 12, color: "#696969" }}>
-                        {"123456"}
+                        {heroes[1].points}
                       </Text>
                     </Row>
                   </Col>
@@ -163,16 +166,16 @@ class RankingScreen extends React.Component<Props> {
                       </Text>
                       <Thumbnail
                         style={{ width: 40, height: 40, borderRadius: 40 / 2 }}
-                        source={{ uri: "https://banner2.cleanpng.com/20180920/yko/kisspng-computer-icons-portable-network-graphics-avatar-ic-5ba3c66df14d32.3051789815374598219884.jpg" }} />
+                        source={{ uri: heroes[2].picture }} />
                     </Row>
                     <Row alignItems="center" justifyContent="center">
                       <Text style={{ fontSize: 12, color: "#b21773" }}>
-                        {"Felhasználó Neve"}
+                        {heroes[2].name}
                       </Text>
                     </Row>
                     <Row alignItems="center" justifyContent="center">
                       <Text style={{ fontSize: 12, color: "#696969" }}>
-                        {"123456"}
+                        {heroes[2].points}
                       </Text>
                     </Row>
                   </Col>
@@ -191,8 +194,8 @@ class RankingScreen extends React.Component<Props> {
                 </Row>
               </Col>
             </Row>
-            {list.map((item, index) => {
-              return (
+            {heroes.map((item, index) => {
+              if(index > 2) { return (
                 <Row key={index} style={{  borderRadius: 2,
                                     borderColor: '#ddd',
                                     borderBottomWidth: 0,
@@ -211,7 +214,7 @@ class RankingScreen extends React.Component<Props> {
                       <Row>
                         <Col size={1} alignItems="center" justifyContent="center">
                           <Text style={{ fontSize: 16, color: "#b21773", margin: 8 }}>
-                            {index + 4}
+                            {index + 1}
                           </Text>
                         </Col>
                         <Col size={1}>
@@ -220,7 +223,7 @@ class RankingScreen extends React.Component<Props> {
                               <Row style={{ padding: 4 }} alignItems="center" justifyContent="center">
                                 <Thumbnail
                                   style={{ width: 40, height: 40, borderRadius: 40 / 2 }}
-                                  source={{ uri: index % 2 === 0 ? "https://banner2.cleanpng.com/20180920/yko/kisspng-computer-icons-portable-network-graphics-avatar-ic-5ba3c66df14d32.3051789815374598219884.jpg" : "https://icon-library.net/images/avatar-icon-png/avatar-icon-png-10.jpg" }} />
+                                  source={{ uri: item.picture }} />
                               </Row>
                             </Col>
                           </Row>
@@ -238,7 +241,7 @@ class RankingScreen extends React.Component<Props> {
                           <Row>
                             <Col alignItems="center" justifyContent="center">
                               <Text style={{ padding: 4, color: "#696969", fontSize: 10 }}>
-                                {123456}
+                                {item.points}
                               </Text>
                             </Col>
                           </Row>
@@ -259,7 +262,7 @@ class RankingScreen extends React.Component<Props> {
                         </Col>
                       </Row>
                   </Col>
-                </Row>)
+                </Row>)}
             })}
           </Grid>
         </Content>

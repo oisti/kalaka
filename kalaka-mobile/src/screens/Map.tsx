@@ -109,7 +109,7 @@ class Map extends React.Component<Props> {
         const {item} = this.state;
         return (
             <Row
-                style={{   borderWidth: 1,
+                style={{   borderWidth: 0,
                     borderRadius: 2,
                     borderColor: '#ddd',
                    // borderBottomWidth: 0,

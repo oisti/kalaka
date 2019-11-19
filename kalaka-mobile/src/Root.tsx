@@ -8,7 +8,7 @@ import Navigator from "./navigation/Navigator";
 import i18n from "i18n-js";
 import * as Localization from 'expo-localization';
 import strings from "./languages/";
-import {FirebaseKeys} from './constants/ApiKeys';
+import {FirebaseKeys} from './constants/FirebaseKeys';
 import SmartUtil from './components/SmartUtil';
 
 import * as firebase from 'firebase';
